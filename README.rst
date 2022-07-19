@@ -36,6 +36,7 @@ Things To-Do
 | Cheat codes.
 |ss|
 
+| Discontinue PyDiceroll. Rename project to pydice, staring at v3.8.
 | Fudge the Fate dice roll a bit.
 | Add Advantage and Disadvantage roll types.
 | Instruction manual.
