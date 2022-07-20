@@ -15,4 +15,5 @@
    | *dice_roll_modifier* must include a '+' or '-' with its value.
    |
    | Note that both *number_of_dice* and *dice_roll_modifier* are optional, and may not even be
-   | used by some *dice_type* rolls. Leaving the entire string value empty or blank will default to making a '2D6' roll.
+   | used by some *dice_type* rolls. Leaving the entire string value empty or blank will default
+   | to making a '2D6' roll.

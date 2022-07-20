@@ -12,9 +12,6 @@ the **pydice Operations Manual** at http://pydice.readthedocs.io
 Download the PDF from https://readthedocs.org/projects/pydice/downloads/pdf/latest
 
 
-.. image:: docs/source/video.png
-    :target: https://www.youtube.com/watch?v=xuyfLJbdDso
-
 Warning
 -------
 

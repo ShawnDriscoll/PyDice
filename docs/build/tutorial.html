@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pydice Tutorial &mdash; pydice 3.8 Operations Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/pydice_icon_16x16.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using roll() in Your Own Code" href="samples.html" />
+    <link rel="prev" title="What’s New with pydice?" href="what_is_new.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pydice
+          
+
+          
+            
+            <img src="_static/shonner_trans.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html"><strong>Overview</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html"><strong>Introduction</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="what_is_new.html"><strong>What’s New with pydice?</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>pydice Tutorial</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rolling-the-dice">Rolling the Dice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html"><strong>Using roll() in Your Own Code</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html"><strong>Debugging pydice</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternate_distributions.html"><strong>Alternate pydice Distributions</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="software_titles.html"><strong>Software Titles That Use pydice</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="designers_notes.html"><strong>Designer’s Notes from PyDiceroll</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="designers_notes_update.html"><strong>Designer’s Notes from pydice</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="pydice.html"><strong>pydice Module</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html"><strong>Glossary</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html"><strong>Open Source</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ffe.html"><strong>FFE Agreement</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_the_author.html"><strong>About the Author</strong></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pydice</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><strong>pydice Tutorial</strong></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pydice-tutorial">
+<h1><strong>pydice Tutorial</strong><a class="headerlink" href="#pydice-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default">
+<img alt="_images/dice_tut.png" src="_images/dice_tut.png" />
+</div>
+<div class="section" id="rolling-the-dice">
+<h2>Rolling the Dice<a class="headerlink" href="#rolling-the-dice" title="Permalink to this headline">¶</a></h2>
+<p>Once <code class="docutils literal notranslate"><span class="pre">pydice.py</span></code> is installed and your code is able to import the module, its <code class="docutils literal notranslate"><span class="pre">roll()</span></code> function can be
+used right away. This function returns an integer, by the way. So it can be used as any other integer would
+be used. But first, we must give this function a value to work from.</p>
+<dl class="py function">
+<dt id="roll">
+<code class="sig-name descname"><span class="pre">roll</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dice</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#roll" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line"><em>dice</em> = a string of three ordered concatenated values:</div>
+<div class="line"><br /></div>
+<div class="line"><em>number_of_dice</em> + <em>dice_type</em> + <em>dice_roll_modifier</em></div>
+<div class="line"><br /></div>
+<div class="line">As examples:</div>
+<div class="line"><em>dice</em> = ‘2’ + ‘D10’ + ‘-2’</div>
+<div class="line"><em>dice</em> = str(3) + ‘D6’ + ‘+2’</div>
+<div class="line"><em>dice</em> = ‘FLUX’</div>
+<div class="line"><br /></div>
+<div class="line"><em>dice_roll_modifier</em> must include a ‘+’ or ‘-‘ with its value.</div>
+<div class="line"><br /></div>
+<div class="line">Note that both <em>number_of_dice</em> and <em>dice_roll_modifier</em> are optional, and may not even be</div>
+<div class="line">used by some <em>dice_type</em> rolls. Leaving the entire string value empty or blank will default</div>
+<div class="line">to making a ‘2D6’ roll.</div>
+</div>
+</dd></dl>
+
+<p>Those of you that have used dice rolling programs before will notice that something is different. And that is,
+<code class="docutils literal notranslate"><span class="pre">roll()</span></code> uses a string for its input:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">die1</span> <span class="o">=</span> <span class="n">roll</span><span class="p">(</span><span class="s1">&#39;1D6&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">die2</span> <span class="o">=</span> <span class="n">roll</span><span class="p">(</span><span class="s1">&#39;1d6&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dice</span> <span class="o">=</span> <span class="s1">&#39;3D4+1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">die1</span><span class="p">,</span> <span class="n">die2</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">roll</span><span class="p">(</span><span class="n">dice</span><span class="p">))</span>
+<span class="go">3, 6, 9</span>
+</pre></div>
+</div>
+<p>The return values from <code class="docutils literal notranslate"><span class="pre">roll()</span></code> are always integer.</p>
+<p>Notice that the inputted string values can be upper or lower case.</p>
+<p>The dice types to roll are:</p>
+<blockquote>
+<div><p><strong>D2, D3, D4, D5, D6, D8, D09, D10, D12, D20, D30, D99, D100, D44, D66, D88,
+DD, BOON, BANE, FLUX, GOODFLUX, BADFLUX, ADVANTAGE, DISADVANTAGE</strong>, and <strong>4dF</strong>.</p>
+</div></blockquote>
+<p><strong>D09</strong> rolls will generate a range of <strong>0 - 9</strong>.</p>
+<p><strong>D99</strong> rolls will generate a range of <strong>0 - 99</strong>.</p>
+<p><strong>D2</strong> rolls will generate a range of <strong>0 - 1</strong>.</p>
+<p>The <strong>4dF</strong> roll type is for FATE mechanics. A range of <strong>-4 to 4</strong> is generated.</p>
+<p>Traveller5 uses <strong>1D</strong> thru <strong>10D</strong> rolls, depending on the difficulty of a task. DMs are supported.</p>
+<p><strong>ADVANTAGE</strong> and <strong>DISADVANTAGE</strong> are dice rolls for the d20 system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may recognize some of these dice types from various tabletop role-playing games. Not all dice types are covered by <strong>pydice</strong>. However, more are planned for in future releases.</p>
+</div>
+<p><strong>pydice</strong> uses a simple standard when it comes to rolling various dice types.</p>
+<p>Some examples are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">roll</span><span class="p">(</span><span class="s1">&#39;D6&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">roll</span><span class="p">(</span><span class="s1">&#39;1D6&#39;</span><span class="p">)</span> <span class="c1"># roll one 6-sided die</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;2D6&#39;</span><span class="p">)</span> <span class="c1"># roll two 6-sided dice</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;D09&#39;</span><span class="p">)</span> <span class="c1"># roll a 10-sided die (0 - 9)</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;D10&#39;</span><span class="p">)</span> <span class="c1"># roll a 10-sided die (1 - 10)</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;D099&#39;</span><span class="p">)</span> <span class="c1"># roll a 100-sided die (0 - 99)</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;D100&#39;</span><span class="p">)</span> <span class="c1"># roll a 100-sided die (1 - 100)</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;D66&#39;</span><span class="p">)</span> <span class="c1"># roll for a D66 chart</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;FLUX&#39;</span><span class="p">)</span> <span class="c1"># a FLUX roll (-5 to 5)</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;3D6+6&#39;</span><span class="p">)</span> <span class="c1"># add +6 DM to roll</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;4D4-4&#39;</span><span class="p">)</span> <span class="c1"># add -4 DM to roll</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;2DD+3&#39;</span><span class="p">)</span> <span class="c1"># roll (2D6+3) x 10</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;BOON&#39;</span><span class="p">)</span> <span class="c1"># roll 3D6 and keep the higher two dice</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;4D&#39;</span><span class="p">)</span> <span class="c1"># make a Traveller5 4D roll</span>
+<span class="n">roll</span><span class="p">(</span><span class="s1">&#39;4dF&#39;</span><span class="p">)</span> <span class="c1"># make a FATE roll (-4 to 4)</span>
+</pre></div>
+</div>
+<p><strong>pydice</strong> can be used directly at a CMD prompt using:</p>
+<p>The long form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="o">&gt;</span><span class="n">pydice</span><span class="o">.</span><span class="n">py</span> <span class="n">roll</span><span class="p">(</span><span class="s1">&#39;2d6-2&#39;</span><span class="p">)</span>
+
+<span class="n">Your</span> <span class="s1">&#39;2D6-2&#39;</span> <span class="n">roll</span> <span class="ow">is</span> <span class="mf">10.</span>
+</pre></div>
+</div>
+<p>Or the short form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="o">&gt;</span><span class="n">pydice</span><span class="o">.</span><span class="n">py</span> <span class="mi">2</span><span class="n">d6</span><span class="o">-</span><span class="mi">2</span>
+
+<span class="n">Your</span> <span class="s1">&#39;2D6-2&#39;</span> <span class="n">roll</span> <span class="ow">is</span> <span class="mf">7.</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Typing <code class="docutils literal notranslate"><span class="pre">pydice.py</span> <span class="pre">-h</span></code> will provide some help.</p>
+</div>
+<p>A <strong>TEST</strong> roll that calculates percentages for 2D6 can be issued:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">roll</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="go">      6x6 Roll Chart Test</span>
+<span class="go">     1    2    3    4    5    6</span>
+<span class="go">1  262  296  250  292  292  241</span>
+<span class="go">2  270  315  299  236  279  261</span>
+<span class="go">3  295  274  288  274  291  295</span>
+<span class="go">4  273  284  279  276  249  273</span>
+<span class="go">5  293  280  291  276  280  283</span>
+<span class="go">6  270  276  282  272  273  280</span>
+<span class="go">            6x6 Roll Chart Percentage</span>
+<span class="go">        1       2       3       4       5       6</span>
+<span class="go">1   2.62%   5.66%   8.60%  11.38%  13.93%  16.23%</span>
+<span class="go">2   5.66%   8.60%  11.38%  13.93%  16.23%  13.95%</span>
+<span class="go">3   8.60%  11.38%  13.93%  16.23%  13.95%  11.02%</span>
+<span class="go">4  11.38%  13.93%  16.23%  13.95%  11.02%   8.25%</span>
+<span class="go">5  13.93%  16.23%  13.95%  11.02%   8.25%   5.56%</span>
+<span class="go">6  16.23%  13.95%  11.02%   8.25%   5.56%   2.80%</span>
+</pre></div>
+</div>
+<p>The roll will return a list of percentages for 2-12 rolled.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="samples.html" class="btn btn-neutral float-right" title="Using roll() in Your Own Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="what_is_new.html" class="btn btn-neutral float-left" title="What’s New with pydice?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2022, SHONNER CORP.
+      <span class="lastupdated">
+        Last updated on Jul 19, 2022.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,5 +1,5 @@
-**Designer's Notes**
-====================
+**Designer's Notes from PyDiceroll**
+====================================
 
 In the Beginning
 ----------------

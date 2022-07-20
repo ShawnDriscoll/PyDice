@@ -13,6 +13,7 @@
    alternate_distributions
    software_titles
    designers_notes
+   designers_notes_update
    pydice
    glossary
    license
