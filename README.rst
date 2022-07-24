@@ -43,6 +43,10 @@ Things To-Do
 
 **Known History**
 
+* v3.9.0
+
+  ``random()`` instead of ``randint()`` is now being used to speed up generating numbers.
+  
 * v3.8.0
 
   From here on, **pydice** is the new name.

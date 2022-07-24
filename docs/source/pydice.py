@@ -1,5 +1,5 @@
 #
-#   pydice.py
+#   pydice.py 3.9.0
 #
 #   Written for Python 3.9.13
 #
@@ -19,13 +19,14 @@ Usage:
     Will roll two 6-sided dice, returning an integer
 '''
 
-from random import randint
+#from random import randint
+from random import random
 import os
 import logging
 import sys
 
-__version__ = '3.8'
-__release__ = '3.8.0'
+__version__ = '3.9'
+__release__ = '3.9.0'
 __py_version__ = '3.9.13'
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
@@ -73,7 +74,8 @@ def _dierolls(dtype, dcount):
             dice_log.debug('Using %d %d-sided dice...' % (dcount, dtype))
         
     for i in range(dcount):
-        rolled = randint(1, dtype)
+        #rolled = randint(1, dtype)
+        rolled = int(random() * dtype + 1)  #random() is much faster to use than randint()
         if rolled == 8 or rolled == 11 or rolled == 18 or rolled >= 80 and rolled <= 89:
             dice_log.debug('Rolled an %s' % rolled)
         else:

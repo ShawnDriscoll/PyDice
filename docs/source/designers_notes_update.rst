@@ -27,6 +27,10 @@ or: ::
 
    diceroll = random.randrange(1, 7)
 
+or: ::
+
+   diceroll = int(random.random() * 6 + 1)
+
 for rolling 6-sided dice in their code, which is done procedurally for the most part.
 
 Over on GitHub however, a lot of the dice apps are coded in functional and/or object-oriented fashion.

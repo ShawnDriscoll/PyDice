@@ -1,6 +1,12 @@
 **What's New with pydice?**
 ===========================
 
+New in pydice 3.9.0
+-------------------
+
+**pydice** now uses ``int(random() * n + 1)`` instead of ``randint(1, n)`` to generation its random numbers much faster.
+
+
 New in pydice 3.8.0
 -------------------
 
