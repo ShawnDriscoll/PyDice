@@ -47,7 +47,7 @@ author = 'Shawn Driscoll'
 version = '3.9'
 # The full version, including alpha/beta/rc tags.
 #release = '3.9.0'
-release = '(First Printing)'
+release = '3.9.0, First Printing'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -102,7 +102,7 @@ html_theme = 'sphinx_rtd_theme'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'pydice 3.9 Operations Manual'
+html_title = 'pydice Operations Manual'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = 'pydice 3.8 Operations Manual'
@@ -173,7 +173,7 @@ latex_font_size = '12pt'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, document class [howto/manual]).
 latex_documents = [
-  ('index', 'pydice.tex', 'pydice 3.9 Operations Manual', 'Shawn Driscoll', 'manual'),
+  ('index', 'pydice.tex', 'pydice Operations Manual', 'Shawn Driscoll', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
