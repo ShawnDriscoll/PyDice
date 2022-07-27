@@ -56,6 +56,7 @@
 	 
    d4F
      A Fate die. Interesting to look at. Maybe even to use. Fate itself is a terrible RPG though.
+     By the way, the secret rolls in pydice are 1DF, 2DF, 3DF, and 5DF.
      
    debug
      The process of finding and resolving of defects that prevent
