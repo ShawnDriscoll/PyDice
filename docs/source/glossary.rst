@@ -3,10 +3,14 @@
 
 .. glossary::
 
+   4DF
+     A Fate die. Interesting to look at. Maybe even to use. Fate itself is a terrible RPG though.
+     By the way, the secret rolls in pydice are 1DF, 2DF, 3DF, and 5DF.
+	 
    ASM
      Rarely is Assembly language programming done by hand. Rumors say it will make
      a huge comeback, once people stop using compilers.
-   
+     
    80286
      A CPU used by home computers in the mid-1980s.
      
@@ -26,11 +30,11 @@
    COBOL
      A programming language that did not see the coming days of Python. For it
      was already a dead language.
-
+     
    compiler
      Converts the long-winded and verbose code that people type into something that
      computers can work with. See ASM.
-
+     
    concatenation
      String concatenation is the operation of joining character strings
      end-to-end. For example, the concatenation of "iron" and "man"
@@ -54,10 +58,6 @@
    D20
      A much over-rated die.
 	 
-   d4F
-     A Fate die. Interesting to look at. Maybe even to use. Fate itself is a terrible RPG though.
-     By the way, the secret rolls in pydice are 1DF, 2DF, 3DF, and 5DF.
-     
    debug
      The process of finding and resolving of defects that prevent
      correct operation of computer software or a system.
@@ -66,7 +66,7 @@
      Small throwable objects with multiple resting positions, used for
      generating random numbers. Dice are suitable as gambling devices
      for games like craps and are also used in tabletop games.
-
+     
    errors
      Bugs that need to be squashed.
      
@@ -80,7 +80,7 @@
 	 
    GitHub
      It's where we will all be uploaded someday.
-
+     
    i7
      A CPU for making your Python code run as fast as C code.
      
@@ -93,11 +93,11 @@
    import
      The import command in Python is the same as the load command in BASIC09. It's one
      of the most over-used commands in Python. Python can import code from the future.
-    
+     
    integer
      An integer is what is more commonly known as a whole number.
      It may be positive, negative, or the number zero, but it must be whole.
-
+     
    interpreter
      All of the best programming languages are interpreted. People get things done quicker
      when they don't have to compile. Less interruptions.
@@ -114,17 +114,17 @@
      
    no dice
      Used to refuse a request or indicate no chance of success.
-
+     
    NPC
      A game character that wants to kill a player character.
-
+     
    Pascal
      A programming language that Python helped kill.
 	 
    pip
      A package installer for Python. It will install packages from the Interweb (a.k.a. iCloud). It's
      the way most people install Python modules uploaded by other people these days.
-
+     
    print()
      Always remember to use **(** and **)** when using a print function. Them's the rules now.
 	 
@@ -135,7 +135,8 @@
      The best GUI for Python. It is the Python version of Qt, which is the C version of the GUI.
 	 
    Python 3.9+
-     A version of Python, used the-world-over, that pydice was written for.
+     A version of Python, used the-world-over, to write pydice in. As of this writing,
+	 Python is the most popular computer programming language of all time.
      
    rabbit hole
      Used to refer to a bizarre, confusing, or nonsensical situation
@@ -147,15 +148,18 @@
      intelligible pattern or combination. Individual random events are
      by definition unpredictable, but in many cases the frequency of
      different outcomes over a large number of events (or "trials") is predictable.
-
+    
    RNG
      Random number generator. Mostly used as a meme these days. But still has its very
      practical uses.
-
+     
    RPG
      Role-playing games use dice. pydice makes attempts at rolling the dice for the
      players and for the NPCs.
-
+	 
+   Ruby
+     This program could have been written in Ruby. But Python won that war long ago.
+     
    Sphinx
      The Python software used to publish this much-needed operations manual.
      
