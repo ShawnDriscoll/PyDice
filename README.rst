@@ -1,10 +1,10 @@
 
 .. figure:: docs/source/pydice_manual_cover_pdf_art.png
 
-**pydice for Python 3.10**
+**pydice for Python 3.9**
 =============================
 
-**pydice** is a Python 3.10 module that your game code calls to make dice rolls.
+**pydice** is a Python 3.9 module that your game code calls to make dice rolls.
 
 For instructions on installing and trying out the tutorial, read
 the **pydice Operations Manual** at http://pydice.readthedocs.io
