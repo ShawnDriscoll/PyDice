@@ -25,8 +25,8 @@ import os
 import logging
 import sys
 
-__version__ = '3.9'
-__release__ = '3.9.0'
+__version__ = '3.10'
+__release__ = '3.10.0'
 __py_version__ = '3.9.13'
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
@@ -87,7 +87,7 @@ def roll(dice='2d6'):
     '''
     The dice types to roll are:
         '4dF', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10',
-        'D12', 'D20', 'D30', 'D099', 'D100', 'D44', 'D66', 'D88', 'DD',
+        'D12', 'D20', 'D30', 'D099', 'D100', 'D0999', 'D1000', 'D44', 'D66', 'D88', 'DD',
         'FLUX', 'GOODFLUX', 'BADFLUX', 'BOON', 'BANE', 'ADVANTAGE',
         'DISADVANTAGE', and also Traveller5's 1D thru 10D rolls
 
@@ -190,7 +190,8 @@ def roll(dice='2d6'):
                   '2d10', '3d10', '4d10',
                   '2d12', '3d12', '4d12',
                   '2d20', '3d20', '4d20', '3d6+1', '2d6-2', '2d6-7',
-                  '1dd', '2dd', '3dd', '4dd+3']
+                  '1dd', '2dd', '3dd', '4dd+3',
+                  'd0999', 'd1000']
 
         print()
         print('Using brute force...')
@@ -454,6 +455,20 @@ def roll(dice='2d6'):
                 roll_2 = _dierolls(10, 1)
                 rolled = roll_1 + roll_2 + dice_mod
                 dice_log.info("'%s' = %d%s+%d = %d and %d + %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, dice_mod, rolled))
+                return rolled
+            elif dice_type == 'D0999' and num_dice == 1:
+                roll_1 = (_dierolls(10, 1) - 1) * 100
+                roll_2 = (_dierolls(10, 1) - 1) * 10
+                roll_3 = _dierolls(10, 1) - 1
+                rolled = roll_1 + roll_2 + roll_3 + dice_mod
+                dice_log.info("'%s' = %d%s+%d = %d and %d and %d + %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, roll_3, dice_mod, rolled))
+                return rolled
+            elif dice_type == 'D1000' and num_dice == 1:
+                roll_1 = (_dierolls(10, 1) - 1) * 100
+                roll_2 = (_dierolls(10, 1) - 1) * 10
+                roll_3 = _dierolls(10, 1)
+                rolled = roll_1 + roll_2 + roll_3 + dice_mod
+                dice_log.info("'%s' = %d%s+%d = %d and %d and %d + %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, roll_3, dice_mod, rolled))
                 return rolled
             elif dice_type == 'DD':
                 rolled = (_dierolls(6, num_dice) + dice_mod) * 10

@@ -44,10 +44,10 @@ author = 'Shawn Driscoll'
 # other places throughout the built documents.
 #
 # The short X.Y version.
-version = '3.9'
+version = '3.10'
 # The full version, including alpha/beta/rc tags.
-#release = '3.9.0'
-release = '3.9.0 (Fourth Printing)'
+#release = '3.10.0'
+release = '3.10.0 (First Printing)'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -105,7 +105,7 @@ html_theme = 'sphinx_rtd_theme'
 html_title = 'pydice Operations Manual'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = 'pydice 3.8 Operations Manual'
+#html_short_title = 'pydice 3.10 Operations Manual'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.

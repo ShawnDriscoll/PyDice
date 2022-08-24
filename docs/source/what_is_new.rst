@@ -1,14 +1,20 @@
 **What's New with pydice?**
 ===========================
 
+New in pydice 3.10.0
+--------------------
+
+The **D0999** roll has been added. It generates a range of **0 - 999**.
+
+The **D1000** roll has been added. It generates a range of **1 - 1000**.
+
+
 New in pydice 3.9.0
--------------------
 
 **pydice** now uses ``int(random() * n + 1)`` instead of ``randint(1, n)`` to generation its random numbers much faster.
 
 
 New in pydice 3.8.0
--------------------
 
 PyDiceroll is now **pydice**. PyDiceroll has been discontinued.
 Modified **DEBUG** level logging for **BOON**, **BANE**, **ADVANTAGE**, and **DISADVANTAGE** rolls.
@@ -78,8 +84,5 @@ program or at a CMD prompt.
 Refactored for Python 3.9
 
 **PyDiceroll's** code has been updated from 2.5 to 3.9 standards.
-
-
-The **D5** Die
 
 The **D5** has been added to **PyDiceroll**. It is basically a **D10** divided by 2, much like how the **D3** die is a **D6** that is divided by 2.
