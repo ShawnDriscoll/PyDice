@@ -1,5 +1,5 @@
 #
-#   pydice.py 3.10.0
+#   pydice.py 3.10.5
 #
 #   Written for Python 3.9.13
 #
@@ -26,7 +26,7 @@ import logging
 import sys
 
 __version__ = '3.10'
-__release__ = '3.10.0'
+__release__ = '3.10.5'
 __py_version__ = '3.9.13'
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
@@ -87,7 +87,7 @@ def roll(dice='2d6'):
     '''
     The dice types to roll are:
         '4dF', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10', 'D12', 'D20',
-        'D30', 'D099', 'D100', 'D0999', 'D1000', 'D44', 'D66', 'D88', 'DD',
+        'D30', 'D099', 'D100', 'D0999', 'D1000', 'D44', 'D66', 'D666', 'D88', 'DD',
         'FLUX', 'GOODFLUX', 'BADFLUX', 'BOON', 'BANE', 'ADVANTAGE',
         'DISADVANTAGE', and also Traveller5's 1D thru 10D rolls
 
@@ -191,7 +191,7 @@ def roll(dice='2d6'):
                   '2d12', '3d12', '4d12',
                   '2d20', '3d20', '4d20', '3d6+1', '2d6-2', '2d6-7',
                   '1dd', '2dd', '3dd', '4dd+3',
-                  'd0999', 'd1000']
+                  'd0999', 'd1000', 'd666']
 
         print()
         print('Using brute force...')
@@ -415,25 +415,32 @@ def roll(dice='2d6'):
                 return rolled
             elif dice_type == 'D2' and num_dice == 1 and dice_mod == 0:
                 rolled = _dierolls(2, 1) - 1
-                dice_log.info("'%s' = %d%s+%d = %d" % (dice, num_dice, dice_type, dice_mod, rolled))
+                dice_log.info("'%s' = %d%s = %d" % (dice, num_dice, dice_type, rolled))
                 return rolled
             elif dice_type == 'D44' and num_dice == 1 and dice_mod == 0:
                 roll_1 = _dierolls(4, 1)
                 roll_2 = _dierolls(4, 1)
                 rolled = roll_1 * 10 + roll_2
-                dice_log.info("'%s' = %d%s+%d = %d and %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, rolled))
+                dice_log.info("'%s' = %d%s = %d and %d = %d" % (dice, num_dice, dice_type, roll_1, roll_2, rolled))
                 return rolled
             elif dice_type == 'D66' and num_dice == 1 and dice_mod == 0:
                 roll_1 = _dierolls(6, 1)
                 roll_2 = _dierolls(6, 1)
                 rolled = roll_1 * 10 + roll_2
-                dice_log.info("'%s' = %d%s+%d = %d and %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, rolled))
+                dice_log.info("'%s' = %d%s = %d and %d = %d" % (dice, num_dice, dice_type, roll_1, roll_2, rolled))
                 return rolled
             elif dice_type == 'D88' and num_dice == 1 and dice_mod == 0:
                 roll_1 = _dierolls(8, 1)
                 roll_2 = _dierolls(8, 1)
                 rolled = roll_1 * 10 + roll_2
-                dice_log.info("'%s' = %d%s+%d = %d and %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, rolled))
+                dice_log.info("'%s' = %d%s = %d and %d = %d" % (dice, num_dice, dice_type, roll_1, roll_2, rolled))
+                return rolled
+            elif dice_type == 'D666' and num_dice == 1 and dice_mod == 0:
+                roll_1 = _dierolls(6, 1)
+                roll_2 = _dierolls(6, 1)
+                roll_3 = _dierolls(6, 1)
+                rolled = roll_1 * 100 + roll_2 * 10 + roll_3
+                dice_log.info("'%s' = %d%s = %d and %d and %d = %d" % (dice, num_dice, dice_type, roll_1, roll_2, roll_3, rolled))
                 return rolled
             elif dice_type == 'D09':
                 roll_total = 0

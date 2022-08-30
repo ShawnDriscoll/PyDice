@@ -33,6 +33,7 @@ Things To-Do
 | Cheat codes.
 |ss|
 
+| Think about adding a D666 roll.
 | Discontinue PyDiceroll. Rename project to pydice, staring at v3.8.
 | Fudge the Fate dice roll a bit.
 | Add Advantage and Disadvantage roll types.
@@ -42,6 +43,10 @@ Things To-Do
 |se|
 
 **Known History**
+
+* v3.10.5
+
+  The **D666** roll has been added.
 
 * v3.10.0
 

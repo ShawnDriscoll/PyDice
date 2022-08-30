@@ -35,4 +35,5 @@ if __name__ == '__main__':
 
     log.info(__app__ + ' started, and running...')
 
-print(roll())
+print(roll('info'))
+print(roll('d666'))

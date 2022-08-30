@@ -1,8 +1,13 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.10.0
+New in pydice 3.10.5
 --------------------
+
+The **D666** roll has been added. The result is D6*100 + D6*10 + D6.
+
+
+New in pydice 3.10.0
 
 The **D0999** roll has been added. It generates a range of **0 - 999**.
 
