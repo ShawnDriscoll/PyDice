@@ -47,6 +47,7 @@ Things To-Do
 * v3.10.5
 
   The **D666** roll has been added.
+  Some minor logging cleanup.
 
 * v3.10.0
 

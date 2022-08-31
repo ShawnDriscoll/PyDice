@@ -61,6 +61,8 @@ Traveller5 uses **1D** thru **10D** rolls, depending on the difficulty of a task
 
 **D1000** rolls will generate a range of **1 - 1000**.
 
+**D666** rolls result in D6*100 + D6*10 + D6.
+
 
 .. note::
 
