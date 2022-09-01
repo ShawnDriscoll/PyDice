@@ -36,4 +36,5 @@ if __name__ == '__main__':
     log.info(__app__ + ' started, and running...')
 
 print(roll('info'))
-print(roll('d666'))
+print(roll('2D8 # weapon damage'))
+print(roll())

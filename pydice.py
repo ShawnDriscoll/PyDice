@@ -1,5 +1,5 @@
 #
-#   pydice.py 3.10.5
+#   pydice.py 3.10.6
 #
 #   Written for Python 3.9.13
 #
@@ -26,7 +26,7 @@ import logging
 import sys
 
 __version__ = '3.10'
-__release__ = '3.10.5'
+__release__ = '3.10.6'
 __py_version__ = '3.9.13'
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
@@ -107,11 +107,20 @@ def roll(dice='2d6'):
     roll('4dF') -- make a FATE roll (-4 to 4)
     roll('4D') -- make a Traveller5 4D roll
     roll('info') -- release version of program
+    roll('2D8 # weapon damage') -- a 2D8 roll with a comment added
     
     An invalid roll will return a -9999 value.
     '''
 
     log = logging.getLogger('your_logger_function_here.pydice')
+    
+    # strip out comment if found
+    ichar3 = dice.find('#')
+    if ichar3 != -1:
+        dice_comment = '                    ' + dice[ichar3:len(dice)]
+        dice = dice[0:ichar3]
+    else:
+        dice_comment = ''
 
     # make inputted string argument upper case, and remove spaces
     dice = str(dice).upper().replace(' ','')
@@ -119,7 +128,7 @@ def roll(dice='2d6'):
     # is this a default dice roll?
     if dice == '':
         dice = '2D6'
-        dice_log.debug('Default roll was made')
+        dice_log.debug('Nothing entered. Default ' + dice + ' will be rolled.')
 
     # was information for this program asked for?
     if dice == 'INFO':
@@ -222,7 +231,7 @@ def roll(dice='2d6'):
         print()
         return
 
-    log.debug(dice)
+    log.debug(dice + ' ' + dice_comment)
     dice_log.debug("Asked to roll '%s':" % dice)
 
     # check if a FATE dice roll
@@ -243,7 +252,7 @@ def roll(dice='2d6'):
         for rolls in range(num_dice):
             rolled += _dierolls(3, 1) - 2
         rolled += dice_mod
-        dice_log.info("'%s' = %d%s+%d = %d" % (dice, num_dice, 'dF', dice_mod, rolled))
+        dice_log.info("'%s' = %d%s+%d = %d %s" % (dice, num_dice, 'dF', dice_mod, rolled, dice_comment))
         return rolled
 
     # set dice modifier to zero
@@ -254,7 +263,7 @@ def roll(dice='2d6'):
         flux1 = _dierolls(6, 1)
         flux2 = _dierolls(6, 1)
         rolled = flux1 - flux2
-        dice_log.info("'%s' = %d - %d = %d" % (dice, flux1, flux2, rolled))
+        dice_log.info("'%s' = %d - %d = %d %s" % (dice, flux1, flux2, rolled, dice_comment))
         return rolled
 
     elif dice == 'GOODFLUX':
@@ -262,10 +271,10 @@ def roll(dice='2d6'):
         flux2 = _dierolls(6, 1)
         if flux1 < flux2:
             rolled = flux2 - flux1
-            dice_log.info("'%s' = %d - %d = %d" % (dice, flux2, flux1, rolled))
+            dice_log.info("'%s' = %d - %d = %d %s" % (dice, flux2, flux1, rolled, dice_comment))
         else:
             rolled = flux1 - flux2
-            dice_log.info("'%s' = %d - %d = %d" % (dice, flux1, flux2, rolled))
+            dice_log.info("'%s' = %d - %d = %d %s" % (dice, flux1, flux2, rolled, dice_comment))
         return rolled
 
     elif dice == 'BADFLUX':
@@ -273,10 +282,10 @@ def roll(dice='2d6'):
         flux2 = _dierolls(6, 1)
         if flux1 > flux2:
             rolled = flux2 - flux1
-            dice_log.info("'%s' = %d - %d = %d" % (dice, flux2, flux1, rolled))
+            dice_log.info("'%s' = %d - %d = %d %s" % (dice, flux2, flux1, rolled, dice_comment))
         else:
             rolled = flux1 - flux2
-            dice_log.info("'%s' = %d - %d = %d" % (dice, flux1, flux2, rolled))
+            dice_log.info("'%s' = %d - %d = %d %s" % (dice, flux1, flux2, rolled, dice_comment))
         return rolled
 
     # check if a BOON roll is being performed
@@ -296,7 +305,7 @@ def roll(dice='2d6'):
                     die[j+1] = temp_die
                     die_swap = True
         rolled = die[0] + die[1]
-        dice_log.debug('Sorted Boon roll: %d %d %d = %d' % (die[0], die[1], die[2], rolled))
+        dice_log.debug('Sorted Boon roll: %d %d %d = %d %s' % (die[0], die[1], die[2], rolled, dice_comment))
         return rolled
     
     # check if a BANE roll is being performed
@@ -316,7 +325,7 @@ def roll(dice='2d6'):
                     die[j+1] = temp_die
                     die_swap = True
         rolled = die[0] + die[1]
-        dice_log.debug('Sorted Bane roll: %d %d %d = %d' % (die[0], die[1], die[2], rolled))
+        dice_log.debug('Sorted Bane roll: %d %d %d = %d %s' % (die[0], die[1], die[2], rolled, dice_comment))
         return rolled
 
     # check if an Advantage roll is being performed
@@ -329,7 +338,7 @@ def roll(dice='2d6'):
             first_d20 = second_d20
             second_d20 = temp_die
         rolled = first_d20
-        dice_log.info('Advantage roll result: %d' % rolled)
+        dice_log.info('Advantage roll result: %d %s' % (rolled, dice_comment))
         return rolled
 
     # check if a Disadvantage roll is being performed
@@ -342,7 +351,7 @@ def roll(dice='2d6'):
             first_d20 = second_d20
             second_d20 = temp_die
         rolled = first_d20
-        dice_log.info('Disadvantage roll result: %d' % rolled)
+        dice_log.info('Disadvantage roll result: %d %s' % (rolled, dice_comment))
         return rolled
     
     # check if negative number was entered
@@ -368,7 +377,7 @@ def roll(dice='2d6'):
         if t5_dice in traveller5_dice:
             num_dice = int(t5_dice[0:len(t5_dice) - 1])
             rolled = _dierolls(6, num_dice) + dice_mod
-            dice_log.info("Traveller5 '%s' = %d%s+%d = %d" % (dice, num_dice, 'D6', dice_mod, rolled))
+            dice_log.info("Traveller5 '%s' = %d%s+%d = %d %s" % (dice, num_dice, 'D6', dice_mod, rolled, dice_comment))
             return rolled
 
     # look for DD in the string (for destructive dice rolls)
@@ -411,36 +420,36 @@ def roll(dice='2d6'):
             
             if dice_type in simple_dice:
                 rolled = _dierolls(int(dice_type[1:len(dice_type)]), num_dice) + dice_mod
-                dice_log.info("'%s' = %d%s+%d = %d" % (dice, num_dice, dice_type, dice_mod, rolled))
+                dice_log.info("'%s' = %d%s+%d = %d %s" % (dice, num_dice, dice_type, dice_mod, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D2' and num_dice == 1 and dice_mod == 0:
                 rolled = _dierolls(2, 1) - 1
-                dice_log.info("'%s' = %d%s = %d" % (dice, num_dice, dice_type, rolled))
+                dice_log.info("'%s' = %d%s = %d %s" % (dice, num_dice, dice_type, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D44' and num_dice == 1 and dice_mod == 0:
                 roll_1 = _dierolls(4, 1)
                 roll_2 = _dierolls(4, 1)
                 rolled = roll_1 * 10 + roll_2
-                dice_log.info("'%s' = %d%s = %d and %d = %d" % (dice, num_dice, dice_type, roll_1, roll_2, rolled))
+                dice_log.info("'%s' = %d%s = %d and %d = %d %s" % (dice, num_dice, dice_type, roll_1, roll_2, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D66' and num_dice == 1 and dice_mod == 0:
                 roll_1 = _dierolls(6, 1)
                 roll_2 = _dierolls(6, 1)
                 rolled = roll_1 * 10 + roll_2
-                dice_log.info("'%s' = %d%s = %d and %d = %d" % (dice, num_dice, dice_type, roll_1, roll_2, rolled))
+                dice_log.info("'%s' = %d%s = %d and %d = %d %s" % (dice, num_dice, dice_type, roll_1, roll_2, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D88' and num_dice == 1 and dice_mod == 0:
                 roll_1 = _dierolls(8, 1)
                 roll_2 = _dierolls(8, 1)
                 rolled = roll_1 * 10 + roll_2
-                dice_log.info("'%s' = %d%s = %d and %d = %d" % (dice, num_dice, dice_type, roll_1, roll_2, rolled))
+                dice_log.info("'%s' = %d%s = %d and %d = %d %s" % (dice, num_dice, dice_type, roll_1, roll_2, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D666' and num_dice == 1 and dice_mod == 0:
                 roll_1 = _dierolls(6, 1)
                 roll_2 = _dierolls(6, 1)
                 roll_3 = _dierolls(6, 1)
                 rolled = roll_1 * 100 + roll_2 * 10 + roll_3
-                dice_log.info("'%s' = %d%s = %d and %d and %d = %d" % (dice, num_dice, dice_type, roll_1, roll_2, roll_3, rolled))
+                dice_log.info("'%s' = %d%s = %d and %d and %d = %d %s" % (dice, num_dice, dice_type, roll_1, roll_2, roll_3, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D09':
                 roll_total = 0
@@ -449,37 +458,37 @@ def roll(dice='2d6'):
                     dice_log.debug('Corrected to a roll of %s (because 0-9 values)' % rolled)
                     roll_total += rolled
                 roll_total += dice_mod
-                dice_log.info("'%s' = %d%s+%d = %d" % (dice, num_dice, dice_type, dice_mod, roll_total))
+                dice_log.info("'%s' = %d%s+%d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_total, dice_comment))
                 return roll_total
             elif dice_type == 'D099' and num_dice == 1:
                 roll_1 = (_dierolls(10, 1) - 1) * 10
                 roll_2 = _dierolls(10, 1) - 1
                 rolled = roll_1 + roll_2 + dice_mod
-                dice_log.info("'%s' = %d%s+%d = %d and %d + %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, dice_mod, rolled))
+                dice_log.info("'%s' = %d%s+%d = %d and %d + %d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, dice_mod, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D100' and num_dice == 1:
                 roll_1 = (_dierolls(10, 1) - 1) * 10
                 roll_2 = _dierolls(10, 1)
                 rolled = roll_1 + roll_2 + dice_mod
-                dice_log.info("'%s' = %d%s+%d = %d and %d + %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, dice_mod, rolled))
+                dice_log.info("'%s' = %d%s+%d = %d and %d + %d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, dice_mod, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D0999' and num_dice == 1:
                 roll_1 = (_dierolls(10, 1) - 1) * 100
                 roll_2 = (_dierolls(10, 1) - 1) * 10
                 roll_3 = _dierolls(10, 1) - 1
                 rolled = roll_1 + roll_2 + roll_3 + dice_mod
-                dice_log.info("'%s' = %d%s+%d = %d and %d and %d + %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, roll_3, dice_mod, rolled))
+                dice_log.info("'%s' = %d%s+%d = %d and %d and %d + %d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, roll_3, dice_mod, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D1000' and num_dice == 1:
                 roll_1 = (_dierolls(10, 1) - 1) * 100
                 roll_2 = (_dierolls(10, 1) - 1) * 10
                 roll_3 = _dierolls(10, 1)
                 rolled = roll_1 + roll_2 + roll_3 + dice_mod
-                dice_log.info("'%s' = %d%s+%d = %d and %d and %d + %d = %d" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, roll_3, dice_mod, rolled))
+                dice_log.info("'%s' = %d%s+%d = %d and %d and %d + %d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, roll_3, dice_mod, rolled, dice_comment))
                 return rolled
             elif dice_type == 'DD':
                 rolled = (_dierolls(6, num_dice) + dice_mod) * 10
-                dice_log.info("'%s' = (%d%s+%d) * 10 = %d" % (dice, num_dice, dice_type, dice_mod, rolled))
+                dice_log.info("'%s' = (%d%s+%d) * 10 = %d %s" % (dice, num_dice, dice_type, dice_mod, rolled, dice_comment))
                 return rolled
                                                     
     log.error('Wrong dice type entered! [ERROR]')
@@ -506,6 +515,8 @@ def roll(dice='2d6'):
     print("roll('4D4-4') -- add -4 DM to roll")
     print()
     print("roll('info') -- release version of program")
+    print()
+    print("roll('2D8 # weapon damage') -- a 2D8 roll with a comment added")
     print()
     return __error__
 

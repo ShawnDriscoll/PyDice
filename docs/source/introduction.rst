@@ -104,4 +104,5 @@ Some ways to see if the ``pydice`` module was installed correctly is by typing:
     roll('4D') -- make a Traveller5 4D roll
     roll('4dF') -- make a FATE roll (-4 to 4)
     roll('info') -- release version of program
+	roll('2D8 # weapon damage') -- a 2D8 roll with a comment added
     An invalid roll will return a -9999 value.

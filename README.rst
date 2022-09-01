@@ -44,6 +44,11 @@ Things To-Do
 
 **Known History**
 
+* v3.10.6
+
+  Comments can be entered with die rolls, such as ``roll('2D8 # weapon damage')``
+  Any comments used will appear in the ``pydice.log`` file.
+
 * v3.10.5
 
   The **D666** roll has been added.
