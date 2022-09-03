@@ -3,7 +3,7 @@
 
 Here is a sample list of software titles, at the time of this writing, using **pydice**:
 
-**Graphical Dice Roll 0.4.2**
+**Graphical Dice Roll 0.4.3**
 
 **PyImperial CharGen 1.5.0**
 

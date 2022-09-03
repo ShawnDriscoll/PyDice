@@ -63,6 +63,9 @@ Traveller5 uses **1D** thru **10D** rolls, depending on the difficulty of a task
 
 **D666** rolls result in D6*100 + D6*10 + D6.
 
+Comments can be added to dice type strings, such as ``roll('2d10 # Strength Attribute)'``
+The comments will appear in the log. This is to help document what certain rolls were used for.
+
 
 .. note::
 
