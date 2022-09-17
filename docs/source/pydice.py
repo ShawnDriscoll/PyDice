@@ -300,76 +300,6 @@ def roll(dice='2d6'):
             dice_log.info("'%s' = %d - %d = %d %s" % (dice, flux1, flux2, rolled, dice_comment))
         return rolled
 
-    # check if a BOON roll is being performed
-    # elif dice == 'BOON':
-    #     dice = '3d6h2'
-        # die = [0, 0, 0]
-        # die[0] = _dierolls(6, 1)
-        # die[1] = _dierolls(6, 1)
-        # die[2] = _dierolls(6, 1)
-        # dice_log.debug('Start Boon roll: %d %d %d' % (die[0], die[1], die[2]))
-        # die_swap = True
-        # while die_swap == True:
-        #     die_swap = False
-        #     for j in range(2):
-        #         if die[j] < die[j+1]:
-        #             temp_die = die[j]
-        #             die[j] = die[j+1]
-        #             die[j+1] = temp_die
-        #             die_swap = True
-        # rolled = die[0] + die[1]
-        # dice_log.debug('Sorted Boon roll: %d %d %d = %d %s' % (die[0], die[1], die[2], rolled, dice_comment))
-        # return rolled
-    
-    # check if a BANE roll is being performed
-    # elif dice == 'BANE':
-    #     dice = '3d6l2'
-        # die = [0, 0, 0]
-        # die[0] = _dierolls(6, 1)
-        # die[1] = _dierolls(6, 1)
-        # die[2] = _dierolls(6, 1)
-        # dice_log.debug('Start Bane roll: %d %d %d' % (die[0], die[1], die[2]))
-        # die_swap = True
-        # while die_swap == True:
-        #     die_swap = False
-        #     for j in range(2):
-        #         if die[j] > die[j+1]:
-        #             temp_die = die[j]
-        #             die[j] = die[j+1]
-        #             die[j+1] = temp_die
-        #             die_swap = True
-        # rolled = die[0] + die[1]
-        # dice_log.debug('Sorted Bane roll: %d %d %d = %d %s' % (die[0], die[1], die[2], rolled, dice_comment))
-        # return rolled
-
-    # check if an Advantage roll is being performed
-    # elif dice == 'ADVANTAGE':
-    #     dice = '2d20h1'
-        # first_d20 = _dierolls(20, 1)
-        # second_d20 = _dierolls(20, 1)
-        # dice_log.debug('Advantage roll: %d and %d' % (first_d20, second_d20))
-        # if first_d20 < second_d20:
-        #     temp_die = first_d20
-        #     first_d20 = second_d20
-        #     second_d20 = temp_die
-        # rolled = first_d20
-        # dice_log.info('Advantage roll result: %d %s' % (rolled, dice_comment))
-        # return rolled
-
-    # check if a Disadvantage roll is being performed
-    # elif dice == 'DISADVANTAGE':
-    #     dice = '2d20l1'
-        # first_d20 = _dierolls(20, 1)
-        # second_d20 = _dierolls(20, 1)
-        # dice_log.debug('Disadvantage roll: %d and %d' % (first_d20, second_d20))
-        # if first_d20 > second_d20:
-        #     temp_die = first_d20
-        #     first_d20 = second_d20
-        #     second_d20 = temp_die
-        # rolled = first_d20
-        # dice_log.info('Disadvantage roll result: %d %s' % (rolled, dice_comment))
-        # return rolled
-    
     # check if negative number was entered
     elif dice[0] == '-':
         log.error('Negative dice count found! [ERROR]')
@@ -588,6 +518,8 @@ def roll(dice='2d6'):
     print("roll('BOON') -- roll 3D6 and keep the higher two dice")
     print("roll('4D') -- make a Traveller5 4D roll")
     print("roll('4dF') -- make a FATE roll (-4 to 4)")
+    print("roll('4D6H3') -- roll 4D6 and keep the higher three dice")
+    print("roll('3D6L2') -- roll 3D6 and keep the lower two dice")
     print()
     print("-/+ DMs can be added to rolls:")
     print("roll('3D6+6') -- add +6 DM to roll")
