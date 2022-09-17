@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                3.10
+                3.11
               </div>
             
           
@@ -97,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html"><strong>Overview</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html"><strong>Introduction</strong></a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>What’s New with pydice?</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#new-in-pydice-3-10-6">New in pydice 3.10.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#new-in-pydice-3-11-0">New in pydice 3.11.0</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html"><strong>pydice Tutorial</strong></a></li>
@@ -179,8 +179,16 @@
             
   <div class="section" id="what-s-new-with-pydice">
 <h1><strong>What’s New with pydice?</strong><a class="headerlink" href="#what-s-new-with-pydice" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="new-in-pydice-3-10-6">
-<h2>New in pydice 3.10.6<a class="headerlink" href="#new-in-pydice-3-10-6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="new-in-pydice-3-11-0">
+<h2>New in pydice 3.11.0<a class="headerlink" href="#new-in-pydice-3-11-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>H</strong> and <strong>L</strong> have been added for keeping higher or lower dice.
+<code class="docutils literal notranslate"><span class="pre">roll('3D6H2')</span></code> – roll 3D6 and keep the higher 2 dice.
+<code class="docutils literal notranslate"><span class="pre">roll('2D20L1')</span></code> – roll 2D20 and keep the lower die.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dice modifiers are ignored when using <strong>H</strong> or <strong>L</strong>.</p>
+</div>
+<p>New in pydice 3.10.6</p>
 <p>Comments can be entered with die rolls, such as <code class="docutils literal notranslate"><span class="pre">roll('2D8</span> <span class="pre">#</span> <span class="pre">weapon</span> <span class="pre">damage')</span></code>
 Any comments used will appear in the <code class="docutils literal notranslate"><span class="pre">pydice.log</span></code> file.</p>
 <p>New in pydice 3.10.5</p>
@@ -247,7 +255,7 @@ program or at a CMD prompt.</p>
     <p>
         &#169; Copyright 2022, SHONNER CORP.
       <span class="lastupdated">
-        Last updated on Sep 03, 2022.
+        Last updated on Sep 17, 2022.
       </span>
 
     </p>

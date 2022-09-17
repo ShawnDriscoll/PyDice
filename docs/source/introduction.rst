@@ -81,7 +81,7 @@ into your ``game_utils`` folder and add this line near the top of your code: ::
 Some ways to see if the ``pydice`` module was installed correctly is by typing:
 
 >>> print(roll('info'))
-('3.10', 'roll(), release version 3.10.5 for Python 3.9.13')
+('3.11', 'roll(), release version 3.11.0 for Python 3.9.13')
 >>> print(roll.__doc__)
     The dice types to roll are:
         '4dF', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10', 'D12', 'D20',
@@ -101,8 +101,10 @@ Some ways to see if the ``pydice`` module was installed correctly is by typing:
     roll('4D4-4') -- add -4 DM to roll
     roll('2DD+3') -- roll (2D6+3) x 10
     roll('BOON') -- roll 3D6 and keep the higher two dice
-    roll('4D') -- make a Traveller5 4D roll
     roll('4dF') -- make a FATE roll (-4 to 4)
+    roll('4D') -- make a Traveller5 4D roll
+    roll('4D6H3') -- roll 4D6 and keep the higher three dice
+    roll('3D6L2') -- roll 3D6 and keep the lower two dice
     roll('info') -- release version of program
-	roll('2D8 # weapon damage') -- a 2D8 roll with a comment added
+    roll('2D8 # weapon damage') -- a 2D8 roll with a comment added
     An invalid roll will return a -9999 value.

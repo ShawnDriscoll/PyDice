@@ -44,6 +44,12 @@ Things To-Do
 
 **Known History**
 
+* v3.11.0
+
+  **H** and **L** have been added for keeping higher or lower dice.
+  ``roll('3D6H2')`` -- roll 3D6 and keep the higher 2 dice.
+  ``roll('2D20L1')`` -- roll 2D20 and keep the lower die.
+
 * v3.10.6
 
   Comments can be entered with die rolls, such as ``roll('2D8 # weapon damage')``

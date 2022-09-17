@@ -1,8 +1,18 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.10.6
+New in pydice 3.11.0
 --------------------
+
+**H** and **L** have been added for keeping higher or lower dice.
+``roll('3D6H2')`` -- roll 3D6 and keep the higher 2 dice.
+``roll('2D20L1')`` -- roll 2D20 and keep the lower die.
+
+.. note::
+   Dice modifiers are ignored when using **H** or **L**.
+
+
+New in pydice 3.10.6
 
 Comments can be entered with die rolls, such as ``roll('2D8 # weapon damage')``
 Any comments used will appear in the ``pydice.log`` file.
