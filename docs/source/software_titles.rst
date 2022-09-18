@@ -10,3 +10,5 @@ Here is a sample list of software titles, at the time of this writing, using **p
 **pyqtgraph_PyTravCalc 4.0.0**
 
 **PyTravLITE 0.3.2**
+
+**SectorGen 0.5.1**
