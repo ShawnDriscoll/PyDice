@@ -9,7 +9,7 @@ New in pydice 3.11.0
 ``roll('2D20L1')`` -- roll 2D20 and keep the lower die.
 
 .. note::
-   Dice modifiers are ignored when using **H** or **L**.
+   Dice roll modifiers are ignored when using **H** or **L**.
 
 
 New in pydice 3.10.6
