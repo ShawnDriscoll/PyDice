@@ -1,11 +1,20 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.11.0
+New in pydice 3.11.5
 --------------------
 
+The new **D1** roll generates a range of **0 - 1**.
+
+**D2** rolls now generate a range of **1 - 2**.
+
+
+New in pydice 3.11.0
+
 **H** and **L** have been added for keeping higher or lower dice.
+
 ``roll('3D6H2')`` -- roll 3D6 and keep the higher 2 dice.
+
 ``roll('2D20L1')`` -- roll 2D20 and keep the lower die.
 
 .. note::

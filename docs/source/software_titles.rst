@@ -5,7 +5,7 @@ Here is a sample list of software titles, at the time of this writing, using **p
 
 **Graphical Dice Roll 0.4.5**
 
-**PyImperial CharGen 1.5.0**
+**PyImperial CharGen 1.5.1**
 
 **pyqtgraph_PyTravCalc 4.0.0**
 

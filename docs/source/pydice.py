@@ -1,5 +1,5 @@
 #
-#   pydice.py 3.11.0
+#   pydice.py 3.11.5
 #
 #   Written for Python 3.9.13
 #
@@ -19,18 +19,18 @@ Usage:
     Will roll two 6-sided dice, returning an integer
 '''
 
-#from random import randint
 from random import random
 import os
 import logging
 import sys
 
 __version__ = '3.11'
-__release__ = '3.11.0'
+__release__ = '3.11.5'
 __py_version__ = '3.9.13'
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
 dice_log = logging.getLogger('pydice')
+#dice_log.setLevel(logging.DEBUG)
 dice_log.setLevel(logging.INFO)
 
 if not os.path.exists('Logs'):
@@ -47,7 +47,7 @@ dice_log.info('Logging started.')
 dice_log.info('roll() v' + __version__ + ' started, and running...')
 
 number_of_dice = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
-simple_dice = ['D3', 'D4', 'D5', 'D6', 'D8', 'D10', 'D12', 'D20', 'D30']
+simple_dice = ['D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D10', 'D12', 'D20', 'D30']
 traveller5_dice = ['1D', '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', '10D']
 fate_dice = ['1DF', '2DF', '3DF', '4DF', '5DF']
 
@@ -86,7 +86,7 @@ def _dierolls(dtype, dcount):
 def roll(dice='2d6'):
     '''
     The dice types to roll are:\n
-    '4dF', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10', 'D12', 'D20',
+    '4dF', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10', 'D12', 'D20',
     'D30', 'D099', 'D100', 'D0999', 'D1000', 'D44', 'D66', 'D666', 'D88',
     'DD', 'FLUX', 'GOODFLUX', 'BADFLUX', 'BOON', 'BANE', 'ADVANTAGE',
     'DISADVANTAGE', and also Traveller5's 1D thru 10D rolls
@@ -192,7 +192,7 @@ def roll(dice='2d6'):
 
     # was a min/max/avg asked for?
     if dice == 'MINMAXAVG':
-        rolls_for_test = ['1d2', '1d3', '1d4', '1d5', '1d6', '1d8', '1d09', '1d10', '1d12', '1d20', '1d30', '1d099', '1d100',
+        rolls_for_test = ['1d1', '1d2', '1d3', '1d4', '1d5', '1d6', '1d8', '1d09', '1d10', '1d12', '1d20', '1d30', '1d099', '1d100',
                   '1df', '2df', '3df', '4df', '5df', 'flux', 'goodflux', 'badflux', 'boon', 'bane', 'advantage', 'disadvantage',
                   '2d4', '3d4', '4d4',
                   '2d6', '3d6', '4d6',
@@ -431,8 +431,8 @@ def roll(dice='2d6'):
                     rolled = _dierolls(int(dice_type[1:len(dice_type)]), num_dice) + dice_mod
                     dice_log.info("'%s' = %d%s+%d = %d %s" % (dice, num_dice, dice_type, dice_mod, rolled, dice_comment))
                     return rolled
-            elif dice_type == 'D2' and num_dice == 1 and dice_mod == 0:
-                rolled = _dierolls(2, 1) - 1
+            elif dice_type == 'D1' and num_dice == 1 and dice_mod == 0:
+                rolled = int(random() + .5)
                 dice_log.info("'%s' = %d%s = %d %s" % (dice, num_dice, dice_type, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D44' and num_dice == 1 and dice_mod == 0:

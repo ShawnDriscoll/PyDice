@@ -44,6 +44,11 @@ Things To-Do
 
 **Known History**
 
+* v3.11.5
+
+  The new **D1** roll generates values **0 - 1**.
+  The **D2** roll now generates values **1 - 2**.
+
 * v3.11.0
 
   **H** and **L** have been added for keeping higher or lower dice.
