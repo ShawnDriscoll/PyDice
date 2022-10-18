@@ -1,5 +1,5 @@
 #
-#   pydice.py 3.11.5
+#   pydice.py 3.11.6
 #
 #   Written for Python 3.9.13
 #
@@ -25,7 +25,7 @@ import logging
 import sys
 
 __version__ = '3.11'
-__release__ = '3.11.5'
+__release__ = '3.11.6'
 __py_version__ = '3.9.13'
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
@@ -74,8 +74,7 @@ def _dierolls(dtype, dcount):
             dice_log.debug('Using %d %d-sided dice...' % (dcount, dtype))
         
     for i in range(dcount):
-        #rolled = randint(1, dtype)
-        rolled = int(random() * dtype + 1)  #random() is much faster to use than randint()
+        rolled = int(random() * dtype + 1)
         if rolled == 8 or rolled == 11 or rolled == 18 or rolled >= 80 and rolled <= 89:
             dice_log.debug('Rolled an %s' % rolled)
         else:
@@ -251,12 +250,20 @@ def roll(dice='2d6'):
         dice_mod = 0
         ichar2 = dice.find('+')
         if ichar2 != -1:
-            dice_mod = int(dice[ichar2:len(dice)])
+            try:
+                dice_mod = int(dice[ichar2:len(dice)])
+            except ValueError:
+                print('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
+                dice_log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
             dF_dice = dice[0:ichar2]
         else:
             ichar2 = dice.find('-')
             if ichar2 != -1:
-                dice_mod = int(dice[ichar2:len(dice)])
+                try:
+                    dice_mod = int(dice[ichar2:len(dice)])
+                except ValueError:
+                    print('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
+                    dice_log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
                 dF_dice = dice[0:ichar2]
         if dF_dice in fate_dice:
             num_dice = int(dF_dice[0:len(dF_dice) - 2])
@@ -316,12 +323,20 @@ def roll(dice='2d6'):
             dice_mod = 0
             ichar2 = dice.find('+')
             if ichar2 != -1:
-                dice_mod = int(dice[ichar2:len(dice)])
+                try:
+                    dice_mod = int(dice[ichar2:len(dice)])
+                except ValueError:
+                    print('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
+                    dice_log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
                 t5_dice = dice[0:ichar2]
             else:
                 ichar2 = dice.find('-')
                 if ichar2 != -1:
-                    dice_mod = int(dice[ichar2:len(dice)])
+                    try:
+                        dice_mod = int(dice[ichar2:len(dice)])
+                    except ValueError:
+                        print('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
+                        dice_log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
                     t5_dice = dice[0:ichar2]
             if t5_dice in traveller5_dice:
                 num_dice = int(t5_dice[0:len(t5_dice) - 1])
@@ -338,10 +353,8 @@ def roll(dice='2d6'):
             keep = dice[ichar4:len(dice)]
     else:
         keep = dice[ichar4:len(dice)]
-    #print('keep =', keep)
     if keep != None:
         dice = dice[0:len(dice)-2]
-    #print('dice =', dice)
 
     # look for DD in the string (for destructive dice rolls)
     ichar1 = dice.find('DD')
@@ -363,43 +376,44 @@ def roll(dice='2d6'):
                 num_dice = int(dice[0:ichar1])
             else:
                 num_dice = 0
-        #print('num_dice =', num_dice)
         if num_dice >= 1:
             
             # is there a +/- dice modifier for the roll?
             ichar2 = dice.find('+')
             if ichar2 != -1:
-                dice_mod = int(dice[ichar2:len(dice)])
+                try:
+                    dice_mod = int(dice[ichar2:len(dice)])
+                except ValueError:
+                    print('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
+                    dice_log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
             else:
                 ichar2 = dice.find('-')
                 if ichar2 != -1:
-                    dice_mod = int(dice[ichar2:len(dice)])
-            #print('dice_mod =', dice_mod)
+                    try:
+                        dice_mod = int(dice[ichar2:len(dice)])
+                    except ValueError:
+                        print('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
+                        dice_log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
     
             # what kind of dice are being rolled? D6? D66? etc.
             if ichar2 != -1:
                 dice_type = dice[ichar1:ichar2]
             else:
                 dice_type = dice[ichar1:len(dice)]
-            #print('dice_type =', dice_type)
 
             if dice_type in simple_dice:
                 if keep != None:
                     die = []
                     keep_type = keep[0:1]
                     rolls_kept = int(keep[1:2])
-                    #print('keep_type =', keep_type)
-                    #print('rolls_kept =', rolls_kept)
                     if rolls_kept <= num_dice:
                         if keep_type == 'H':
                             dice_log.info('%s%s%d: Keeping higher %d %s' % (dice, keep_type, rolls_kept, rolls_kept, dice_comment))
                         else:
                             dice_log.info('%s%s%d: Keeping lower %d %s' % (dice, keep_type, rolls_kept, rolls_kept, dice_comment))
                         for i in range(num_dice):
-                            #print('i =', i)
                             die.append(_dierolls(int(dice_type[1:len(dice_type)]), 1))
                             dice_log.debug("'%s' = %s = %d %s" % (dice, dice_type, die[i], dice_comment))
-                        #print('die =', die)
                         die_swap = True
                         while die_swap == True:
                             die_swap = False

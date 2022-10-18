@@ -44,6 +44,10 @@ Things To-Do
 
 **Known History**
 
+* v3.11.6
+
+  Error-trapping for invalid dice modifiers now.
+
 * v3.11.5
 
   The new **D1** roll generates values **0 - 1**.

@@ -1,8 +1,13 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.11.5
+New in pydice 3.11.6
 --------------------
+
+Error-trapping for invalid dice modifiers now.
+
+
+New in pydice 3.11.5
 
 The new **D1** roll generates a range of **0 - 1**.
 
