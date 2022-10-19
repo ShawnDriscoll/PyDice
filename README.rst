@@ -44,6 +44,11 @@ Things To-Do
 
 **Known History**
 
+* v3.11.7
+
+  **pydice** now checks for version of Python installed. Will display
+  a warning on screen and in the log.
+
 * v3.11.6
 
   Error-trapping for invalid dice modifiers now.

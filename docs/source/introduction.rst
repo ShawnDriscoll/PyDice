@@ -81,7 +81,7 @@ into your ``game_utils`` folder and add this line near the top of your code: ::
 Some ways to see if the ``pydice`` module was installed correctly is by typing:
 
 >>> print(roll('info'))
-('3.11', 'roll(), release version 3.11.6 for Python 3.9.13')
+('3.11', 'roll(), release version 3.11.7 for Python 3.9.13')
 >>> print(roll.__doc__)
     The dice types to roll are:
         '4dF', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10', 'D12', 'D20',

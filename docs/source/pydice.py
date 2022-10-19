@@ -1,5 +1,5 @@
 #
-#   pydice.py 3.11.6
+#   pydice.py 3.11.7
 #
 #   Written for Python 3.9.13
 #
@@ -25,7 +25,7 @@ import logging
 import sys
 
 __version__ = '3.11'
-__release__ = '3.11.6'
+__release__ = '3.11.7'
 __py_version__ = '3.9.13'
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
@@ -45,6 +45,12 @@ dice_log.addHandler(fh)
 
 dice_log.info('Logging started.')
 dice_log.info('roll() v' + __version__ + ' started, and running...')
+if sys.version_info[0] < 3 or sys.version_info[1] < 9:
+    print('Warning:', sys.version_info[0:3], 'is an older version of Python installed.')
+    dice_log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is an older version of Python installed.')
+elif sys.version_info[0] > 3 or sys.version_info[1] > 9:
+    print('Warning:', sys.version_info[0:3], 'is a newer version of Python installed.')
+    dice_log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is a newer version of Python installed.')
 
 number_of_dice = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
 simple_dice = ['D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D10', 'D12', 'D20', 'D30']
@@ -135,6 +141,12 @@ def roll(dice='2d6'):
     if dice == 'INFO':
         ver = 'roll(), release version ' + __release__ + ' for Python ' + __py_version__
         dice_log.info('Reporting: roll() release version: %s' % __release__)
+        if sys.version_info[0] < 3 or sys.version_info[1] < 9:
+            print('Warning:', sys.version_info[0:3], 'is an older version of Python installed.')
+            dice_log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is an older version of Python installed.')
+        elif sys.version_info[0] > 3 or sys.version_info[1] > 9:
+            print('Warning:', sys.version_info[0:3], 'is a newer version of Python installed.')
+            dice_log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is a newer version of Python installed.')
         return __version__, ver
     
     # was a test asked for?
@@ -439,7 +451,7 @@ def roll(dice='2d6'):
                     else:
                         dice = dice + keep_type + str(rolls_kept)
                         dice_log.info('[ERROR] Not enough dice: %s' % dice)
-                        print('[ERROR] Not enough dice:', dice)
+                        print('[ERROR] Not enough dice: %s' % dice)
                         return __error__
                 else:
                     rolled = _dierolls(int(dice_type[1:len(dice_type)]), num_dice) + dice_mod

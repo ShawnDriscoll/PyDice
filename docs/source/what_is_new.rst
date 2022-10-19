@@ -1,8 +1,14 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.11.6
+New in pydice 3.11.7
 --------------------
+
+**pydice** now checks for version of Python installed. Will display
+a warning on screen and in the log.
+
+
+New in pydice 3.11.6
 
 Error-trapping for invalid dice modifiers now.
 

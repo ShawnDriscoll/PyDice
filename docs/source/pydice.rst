@@ -3,9 +3,9 @@
 
 .. method:: pydice.roll(str(number_of_dice) + str(dice_type) + str(dice_roll_modifier))
 
-   | ``roll()`` accepts a string value made up of three concatenated values, then returns an integer.
+   | ``roll()`` accepts a **string value** made up of three concatenated values, then returns an integer.
    |
-   | String values comes from *number_of_dice* + *dice_type* + *dice_roll_modifier*
+   | **String value** comes from *number_of_dice* + *dice_type* + *dice_roll_modifier*
    |
    | Some examples are:
    | '2' + 'D10' + '-2'
