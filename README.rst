@@ -44,6 +44,10 @@ Things To-Do
 
 **Known History**
 
+* v3.11.8
+
+  Dice roll modifiers now work when **H** or **L** are used.
+
 * v3.11.7
 
   **pydice** now checks for version of Python installed. Will display

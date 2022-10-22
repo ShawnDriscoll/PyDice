@@ -1,8 +1,16 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.11.7
+New in pydice 3.11.8
 --------------------
+
+**FLUX, GOODFLUX**, and **BADFLUX** will ignore **dice roll modifiers**.
+
+.. note::
+   Dice roll modifiers are no longer ignored when using **H** or **L**.
+
+
+New in pydice 3.11.7
 
 **pydice** now checks for version of Python installed. Will display
 a warning on screen and in the log.

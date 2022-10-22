@@ -17,3 +17,8 @@
    | Note that both *number_of_dice* and *dice_roll_modifier* are optional, and may not even be
    | used by some *dice_type* rolls. Leaving the entire string value empty or blank will default
    | to making a '2D6' roll.
+
+
+.. note::
+
+   **FLUX, GOODFLUX**, and **BADFLUX** will ignore **dice roll modifiers**.

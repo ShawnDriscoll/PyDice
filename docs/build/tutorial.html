@@ -204,9 +204,14 @@ be used. But first, we must give this function a value to work from.</p>
 <div class="line">Note that both <em>number_of_dice</em> and <em>dice_roll_modifier</em> are optional, and may not even be</div>
 <div class="line">used by some <em>dice_type</em> rolls. Leaving the entire string value empty or blank will default</div>
 <div class="line">to making a ‘2D6’ roll.</div>
+<div class="line"><br /></div>
 </div>
 </dd></dl>
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>FLUX, GOODFLUX</strong>, and <strong>BADFLUX</strong> will ignore <strong>dice roll modifiers</strong>.</p>
+</div>
 <p>Those of you that have used dice rolling programs before will notice that something is different. And that is,
 <code class="docutils literal notranslate"><span class="pre">roll()</span></code> uses a string for its input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">die1</span> <span class="o">=</span> <span class="n">roll</span><span class="p">(</span><span class="s1">&#39;1D6&#39;</span><span class="p">)</span>
@@ -316,7 +321,7 @@ The comments will appear in the log. This is to help document what certain rolls
     <p>
         &#169; Copyright 2022, SHONNER CORP.
       <span class="lastupdated">
-        Last updated on Oct 18, 2022.
+        Last updated on Oct 22, 2022.
       </span>
 
     </p>
