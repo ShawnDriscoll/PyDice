@@ -37,4 +37,4 @@ if __name__ == '__main__':
 
 print(roll('3d6+2 # weapon damage'))
 print(roll('4d6h3+2'))
-print(roll())
+print(roll('dd+3'))
