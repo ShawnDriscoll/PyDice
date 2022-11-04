@@ -3,6 +3,8 @@
 
 Here is a sample list of software titles, at the time of this writing, using **pydice**:
 
+**CORE Micro DieRoller 0.1.0**
+
 **Graphical Dice Roll 0.4.6**
 
 **PyImperial CharGen 1.5.1**
