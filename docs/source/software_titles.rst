@@ -5,7 +5,7 @@ Here is a sample list of software titles, at the time of this writing, using **p
 
 **CORE Micro DieRoller 0.1.0**
 
-**Graphical Dice Roll 0.4.6**
+**Graphical Dice Roll 0.5.0**
 
 **PyImperial CharGen 1.5.1**
 
