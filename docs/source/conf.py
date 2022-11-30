@@ -44,10 +44,10 @@ author = 'Shawn Driscoll'
 # other places throughout the built documents.
 #
 # The short X.Y version.
-version = '3.11'
+version = '3.12'
 # The full version, including alpha/beta/rc tags.
-#release = '3.11.8'
-release = '3.11.8 (Third Printing)'
+#release = '3.12.0'
+release = '3.12.0 (First Printing)'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -94,8 +94,8 @@ pygments_style = 'sphinx'
 # else:
     # html_theme = 'nature'
 
-html_theme = 'sphinx_rtd_theme'
-#html_theme = 'agogo'
+#html_theme = 'sphinx_rtd_theme'
+html_theme = 'agogo'
 #html_theme = 'alabaster'
 #html_theme = 'nature'
 #html_theme = 'classic'

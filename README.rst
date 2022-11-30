@@ -1,10 +1,10 @@
 
 .. figure:: docs/source/pydice_manual_cover_pdf_art.png
 
-**pydice for Python 3.9**
-=============================
+**pydice for Python 3.11**
+==========================
 
-**pydice** is a Python 3.9 module that your game code calls to make dice rolls.
+**pydice** is a Python 3.11 module that your game code calls to make dice rolls.
 
 For instructions on installing and trying out the tutorial, read
 the **pydice Operations Manual** at http://pydice.readthedocs.io
@@ -14,8 +14,6 @@ Download the PDF from https://readthedocs.org/projects/pydice/downloads/pdf/late
 
 Warning
 -------
-
-**pydice** will not work with **Python 2.7-**.
 
 .. |ss| raw:: html
 
@@ -33,6 +31,7 @@ Things To-Do
 | Cheat codes.
 |ss|
 
+| Update to Python 3.11.0.
 | Think about adding a D666 roll.
 | Discontinue PyDiceroll. Rename project to pydice, staring at v3.8.
 | Fudge the Fate dice roll a bit.
@@ -43,6 +42,10 @@ Things To-Do
 |se|
 
 **Known History**
+
+* v3.12.0
+
+  **pydice** has been updated to work with **Python 3.11.0**.
 
 * v3.11.8
 

@@ -1,7 +1,7 @@
 #
-#   pydice.py 3.11.8
+#   pydice.py 3.12.0
 #
-#   Written for Python 3.9.13
+#   Written for Python 3.11.0
 #
 #   To use this module: from pydice import roll
 #
@@ -24,9 +24,9 @@ import os
 import logging
 import sys
 
-__version__ = '3.11'
-__release__ = '3.11.8'
-__py_version__ = '3.9.13'
+__version__ = '3.12'
+__release__ = '3.12.0'
+__py_version__ = '3.11.0'
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
 dice_log = logging.getLogger('pydice')
@@ -45,10 +45,10 @@ dice_log.addHandler(fh)
 
 dice_log.info('Logging started.')
 dice_log.info('roll() v' + __version__ + ' started, and running...')
-if sys.version_info[0] < 3 or sys.version_info[1] < 9:
+if sys.version_info[0] < 3 or sys.version_info[1] < 11:
     print('Warning:', sys.version_info[0:3], 'is an older version of Python installed.')
     dice_log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is an older version of Python installed.')
-elif sys.version_info[0] > 3 or sys.version_info[1] > 9:
+elif sys.version_info[0] > 3 or sys.version_info[1] > 11:
     print('Warning:', sys.version_info[0:3], 'is a newer version of Python installed.')
     dice_log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is a newer version of Python installed.')
 
@@ -142,10 +142,10 @@ def roll(dice='2d6'):
     if dice == 'INFO':
         ver = 'roll(), release version ' + __release__ + ' for Python ' + __py_version__
         dice_log.info('Reporting: roll() release version: %s' % __release__)
-        if sys.version_info[0] < 3 or sys.version_info[1] < 9:
+        if sys.version_info[0] < 3 or sys.version_info[1] < 11:
             print('Warning:', sys.version_info[0:3], 'is an older version of Python installed.')
             dice_log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is an older version of Python installed.')
-        elif sys.version_info[0] > 3 or sys.version_info[1] > 9:
+        elif sys.version_info[0] > 3 or sys.version_info[1] > 11:
             print('Warning:', sys.version_info[0:3], 'is a newer version of Python installed.')
             dice_log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is a newer version of Python installed.')
         return __version__, ver

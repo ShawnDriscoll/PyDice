@@ -34,10 +34,10 @@ Requirements
    **pydice** has been tested on Windows versions: 10.
    It has not been tested on MacOS or Linux.
    
-* **Python 3.9**
+* **Python 3.11**
    
    **pydice** was written using the C implementation of Python
-   version 3.9. Also known as CPython. With some doing, this
+   version 3.11. Also known as CPython. With some doing, this
    module could of course be re-written for Jython, PyPy, or
    IronPython.
    
@@ -47,10 +47,6 @@ Requirements
 * **Your Game**
    
    **pydice** can be used as a standalone program. But where it shines though is when it's imported into a game of yours.
-   
-
-.. Warning::
-   **pydice** will not work with **Python 2.7-**.
 
 
 Installing Locally to Your Folder
@@ -81,7 +77,7 @@ into your ``game_utils`` folder and add this line near the top of your code: ::
 Some ways to see if the ``pydice`` module was installed correctly is by typing:
 
 >>> print(roll('info'))
-('3.11', 'roll(), release version 3.11.8 for Python 3.9.13')
+('3.12', 'roll(), release version 3.12.0 for Python 3.11.0')
 >>> print(roll.__doc__)
     The dice types to roll are:
         '4dF', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10', 'D12', 'D20',

@@ -1,8 +1,13 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.11.8
+New in pydice 3.12.0
 --------------------
+
+**pydice** has been updated for **Python 3.11.0**.
+
+
+New in pydice 3.11.8
 
 **FLUX, GOODFLUX**, and **BADFLUX** will ignore **dice roll modifiers**.
 
