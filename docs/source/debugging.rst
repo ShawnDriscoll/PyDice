@@ -51,3 +51,6 @@ So, if your own code has: ::
 then in **pydice**, make ::
 
    log = logging.getLogger('dungeoneer.pydice')
+
+.. note::
+   If you prefer **pydice** to not log everything, thus speeding up its dice rolling, simply set its logging mode to ``WARNING``.
