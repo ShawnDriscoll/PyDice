@@ -13,8 +13,12 @@ Here is a sample list of software titles, at the time of this writing, using **p
 
 **Python Feral Ghoul FSM**
 
+**PyTravCalc**
+
 **PyTravLITE**
 
 **SectorGen**
 
 **TPS DieRoller**
+
+**TravEncounters**
