@@ -60,3 +60,10 @@ develop-eggs/
 #build/
 *.bat
 *.spec
+
+
+#########
+## Sphinx
+#########
+#build/
+#source/
