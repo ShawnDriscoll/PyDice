@@ -3,7 +3,7 @@
 
 .. figure:: fake_die.png
 
-**pydice** has the ability to log rolls made during its run. You will find ``pydice.log`` in the ``Logs`` folder it creates
+**pydice** has the ability to log rolls made during its execution. You will find ``pydice.log`` in the ``Logs`` folder it creates
 if one isn't there already. By default, this feature is kept to a minimum to allow **pydice** to execute
 at its fastest. **pydice** uses a default logging mode of ``WARNING`` which isn't that verbose. ::
 
