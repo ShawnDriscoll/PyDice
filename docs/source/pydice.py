@@ -31,7 +31,7 @@ __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot
 
 dice_log = logging.getLogger('pydice')
 #dice_log.setLevel(logging.DEBUG)
-dice_log.setLevel(logging.INFO)
+dice_log.setLevel(logging.WARNING)
 
 if not os.path.exists('Logs'):
     os.mkdir('Logs')

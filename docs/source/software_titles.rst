@@ -3,18 +3,18 @@
 
 Here is a sample list of software titles, at the time of this writing, using **pydice**:
 
-**CORE Micro DieRoller 0.1.0**
+**CORE Micro DieRoller**
 
-**Graphical Dice Roll 0.5.0**
+**Graphical Dice Roll**
 
-**PyImperial CharGen 1.5.1**
+**PyImperial CharGen**
 
-**pyqtgraph_PyTravCalc 4.0.0**
+**pyqtgraph_PyTravCalc**
 
-**Python Feral Ghoul FSM 0.0.1**
+**Python Feral Ghoul FSM**
 
-**PyTravLITE 0.3.2**
+**PyTravLITE**
 
-**SectorGen 0.5.1**
+**SectorGen**
 
-**TPS DieRoller 0.4.0**
+**TPS DieRoller**

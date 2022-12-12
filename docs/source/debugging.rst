@@ -3,9 +3,13 @@
 
 .. figure:: fake_die.png
 
-**pydice** keeps a log file of any dice rolls made during its last run. You will find ``pydice.log`` in the ``Logs``
-folder it creates if one isn't there already. In the file you will see mentions of dice being rolled. **pydice** uses
-a default logging mode of ``INFO`` which isn't that verbose. ::
+**pydice** has the ability to log rolls made during its run. You will find ``pydice.log`` in the ``Logs`` folder it creates
+if one isn't there already. By default, this feature is kept to a minimum to allow **pydice** to execute
+at its fastest. **pydice** uses a default logging mode of ``WARNING`` which isn't that verbose. ::
+
+   dice_log.setLevel(logging.WARNING)
+
+Setting the logging mode to ``INFO`` will record more info in the log. ::
 
    dice_log.setLevel(logging.INFO)
 
@@ -51,6 +55,3 @@ So, if your own code has: ::
 then in **pydice**, make ::
 
    log = logging.getLogger('dungeoneer.pydice')
-
-.. note::
-   If you prefer **pydice** to not log everything, thus speeding up its dice rolling, simply set its logging mode to ``WARNING``.

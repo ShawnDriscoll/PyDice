@@ -52,9 +52,13 @@
 <figure class="align-default">
 <img alt="_images/fake_die.png" src="_images/fake_die.png" />
 </figure>
-<p><strong>pydice</strong> keeps a log file of any dice rolls made during its last run. You will find <code class="docutils literal notranslate"><span class="pre">pydice.log</span></code> in the <code class="docutils literal notranslate"><span class="pre">Logs</span></code>
-folder it creates if one isn’t there already. In the file you will see mentions of dice being rolled. <strong>pydice</strong> uses
-a default logging mode of <code class="docutils literal notranslate"><span class="pre">INFO</span></code> which isn’t that verbose.</p>
+<p><strong>pydice</strong> has the ability to log rolls made during its run. You will find <code class="docutils literal notranslate"><span class="pre">pydice.log</span></code> in the <code class="docutils literal notranslate"><span class="pre">Logs</span></code> folder it creates
+if one isn’t there already. By default, this feature is kept to a minimum to allow <strong>pydice</strong> to execute
+at its fastest. <strong>pydice</strong> uses a default logging mode of <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> which isn’t that verbose.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dice_log</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Setting the logging mode to <code class="docutils literal notranslate"><span class="pre">INFO</span></code> will record more info in the log.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dice_log</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -106,10 +110,6 @@ the name of the logger function used by your program that is calling <code class
 <p>then in <strong>pydice</strong>, make</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;dungeoneer.pydice&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you prefer <strong>pydice</strong> to not log everything, thus speeding up its dice rolling, simply set its logging mode to <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>.</p>
 </div>
 </section>
 
@@ -171,7 +171,7 @@ the name of the logger function used by your program that is calling <code class
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, SHONNER CORP.
-      Last updated on Dec 10, 2022.
+      Last updated on Dec 11, 2022.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
         </div>
