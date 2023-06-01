@@ -21,4 +21,4 @@
 
 .. note::
 
-   **FLUX, GOODFLUX**, and **BADFLUX** will ignore **dice roll modifiers**.
+   **FLUX, GOODFLUX**, **BADFLUX**, **ADVANTAGE**, **DISADVANTAGE**, and **SICHERMAN** will ignore **dice roll modifiers**.

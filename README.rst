@@ -43,6 +43,10 @@ Things To-Do
 
 **Known History**
 
+* v3.12.1
+
+  **SICHERMAN** dice rolls have been added.
+
 * v3.12.0
 
   **pydice** has been updated to work with **Python 3.11.0**.
