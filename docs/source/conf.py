@@ -47,7 +47,7 @@ author = 'Shawn Driscoll'
 version = '3.12'
 # The full version, including alpha/beta/rc tags.
 #release = '3.12.1'
-release = '3.12.1 (Third Printing)'
+release = '3.12.1 (Second Printing)'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:

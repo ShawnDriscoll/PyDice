@@ -31,7 +31,7 @@ Requirements
 
 * **Microsoft Windows**
    
-   **pydice** has been tested on Windows versions: 10.
+   **pydice** has been tested on Windows 10.
    It has not been tested on MacOS or Linux.
    
 * **Python 3.11**
