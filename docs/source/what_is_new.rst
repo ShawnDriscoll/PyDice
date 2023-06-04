@@ -1,8 +1,13 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.12.1
+New in pydice 3.12.2
 --------------------
+
+**D09**, **D100**, **D099**, **D1000**, and **D0999** rolls have better ``DEBUG`` logging now.
+
+
+New in pydice 3.12.1
 
 **SICHERMAN** dice rolls have been added.
 

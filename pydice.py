@@ -1,5 +1,5 @@
 #
-#   pydice.py 3.12.1
+#   pydice.py 3.12.2
 #
 #   Written for Python 3.11.0
 #
@@ -26,13 +26,13 @@ import logging
 import sys
 
 __version__ = '3.12'
-__release__ = '3.12.1'
+__release__ = '3.12.2'
 __py_version__ = '3.11.0'
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
 dice_log = logging.getLogger('pydice')
-#dice_log.setLevel(logging.DEBUG)
-dice_log.setLevel(logging.WARNING)
+dice_log.setLevel(logging.DEBUG)
+#dice_log.setLevel(logging.WARNING)
 
 if not os.path.exists('Logs'):
     os.mkdir('Logs')
@@ -470,36 +470,96 @@ def roll(dice='2d6'):
                 return rolled
             elif dice_type == 'D09':
                 roll_total = 0
+                if num_dice == 1:
+                    dice_log.debug('Using %s 10-sided die (numbered 0-9)...' % number_of_dice[num_dice])
+                else:
+                    if num_dice < 11:
+                        dice_log.debug('Using %s 10-sided dice (numbered 0-9)...' % number_of_dice[num_dice])
+                    else:
+                        dice_log.debug('Using %d 10-sided dice (numbered 0-9)...' % num_dice)
                 for rolls in range(num_dice):
-                    rolled = (_dierolls(10, 1) - 1)
-                    dice_log.debug('Corrected to a roll of %s (because 0-9 values)' % rolled)
+                    rolled = int(random() * 10)
+                    if rolled == 8:
+                        dice_log.debug('Rolled an %d' % rolled)
+                    else:
+                        dice_log.debug('Rolled a %d' % rolled)
                     roll_total += rolled
                 roll_total += dice_mod
                 dice_log.info("'%s' = %d%s+%d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_total, dice_comment))
                 return roll_total
             elif dice_type == 'D099' and num_dice == 1:
-                roll_1 = (_dierolls(10, 1) - 1) * 10
-                roll_2 = _dierolls(10, 1) - 1
+                dice_log.debug('Using one 10-sided die (numbered 00-90)...')
+                roll_1 = int(random() * 10) * 10
+                if roll_1 == 80:
+                    dice_log.debug('Rolled an %d' % roll_1)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_1)
+                dice_log.debug('Using one 10-sided die (numbered 0-9)...')
+                roll_2 = int(random() * 10)
+                if roll_2 == 8:
+                    dice_log.debug('Rolled an %d' % roll_2)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_2)
                 rolled = roll_1 + roll_2 + dice_mod
                 dice_log.info("'%s' = %d%s+%d = %d and %d + %d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, dice_mod, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D100' and num_dice == 1:
-                roll_1 = (_dierolls(10, 1) - 1) * 10
-                roll_2 = _dierolls(10, 1)
+                dice_log.debug('Using one 10-sided die (numbered 00-90)...')
+                roll_1 = int(random() * 10) * 10
+                if roll_1 == 8 or roll_1 == 80:
+                    dice_log.debug('Rolled an %d' % roll_1)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_1)
+                dice_log.debug('Using one 10-sided die (numbered 1-10)...')
+                roll_2 = int(random() * 10 + 1)
+                if roll_2 == 8:
+                    dice_log.debug('Rolled an %d' % roll_2)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_2)
                 rolled = roll_1 + roll_2 + dice_mod
                 dice_log.info("'%s' = %d%s+%d = %d and %d + %d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, dice_mod, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D0999' and num_dice == 1:
-                roll_1 = (_dierolls(10, 1) - 1) * 100
-                roll_2 = (_dierolls(10, 1) - 1) * 10
-                roll_3 = _dierolls(10, 1) - 1
+                dice_log.debug('Using one 10-sided die (numbered 000-900)...')
+                roll_1 = int(random() * 10) * 100
+                if roll_1 == 800:
+                    dice_log.debug('Rolled an %d' % roll_1)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_1)
+                dice_log.debug('Using one 10-sided die (numbered 00-90)...')
+                roll_2 = int(random() * 10) * 10
+                if roll_2 == 80:
+                    dice_log.debug('Rolled an %d' % roll_2)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_2)
+                dice_log.debug('Using one 10-sided die (numbered 0-9)...')
+                roll_3 = int(random() * 10)
+                if roll_3 == 8:
+                    dice_log.debug('Rolled an %d' % roll_3)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_3)
                 rolled = roll_1 + roll_2 + roll_3 + dice_mod
                 dice_log.info("'%s' = %d%s+%d = %d and %d and %d + %d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, roll_3, dice_mod, rolled, dice_comment))
                 return rolled
             elif dice_type == 'D1000' and num_dice == 1:
-                roll_1 = (_dierolls(10, 1) - 1) * 100
-                roll_2 = (_dierolls(10, 1) - 1) * 10
-                roll_3 = _dierolls(10, 1)
+                dice_log.debug('Using one 10-sided die (numbered 000-900)...')
+                roll_1 = int(random() * 10) * 100
+                if roll_1 == 800:
+                    dice_log.debug('Rolled an %d' % roll_1)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_1)
+                dice_log.debug('Using one 10-sided die (numbered 00-90)...')
+                roll_2 = int(random() * 10) * 10
+                if roll_2 == 80:
+                    dice_log.debug('Rolled an %d' % roll_2)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_2)
+                dice_log.debug('Using one 10-sided die (numbered 1-10)...')
+                roll_3 = int(random() * 10 + 1)
+                if roll_3 == 8:
+                    dice_log.debug('Rolled an %d' % roll_3)
+                else:
+                    dice_log.debug('Rolled a %d' % roll_3)
                 rolled = roll_1 + roll_2 + roll_3 + dice_mod
                 dice_log.info("'%s' = %d%s+%d = %d and %d and %d + %d = %d %s" % (dice, num_dice, dice_type, dice_mod, roll_1, roll_2, roll_3, dice_mod, rolled, dice_comment))
                 return rolled
