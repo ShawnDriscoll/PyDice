@@ -674,8 +674,6 @@ if __name__ == '__main__':
                     dice_log.info("The direct call to pydice with '%s' resulted in %s." % (dice, num))
                 elif dice == 'INFO':
                     print('roll(), release version ' + __release__ + ' for Python ' + __py_version__)
-                elif dice == 'HEX':
-                    print("Your HEX roll is %d." % (dice, num))
             else:
                 print('Typo of some sort --> ' + dice)
         else:
