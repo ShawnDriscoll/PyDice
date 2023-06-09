@@ -670,10 +670,12 @@ if __name__ == '__main__':
                     dice_log.debug('Default roll was made')
                 num = roll(dice)
                 if dice != 'TEST' and dice != 'INFO' and dice != 'MINMAXAVG':
-                    print("Your '%s' roll is %d." % (dice, num))
-                    dice_log.info("The direct call to pydice with '%s' resulted in %d." % (dice, num))
+                    print("Your '%s' roll is %s." % (dice, num))
+                    dice_log.info("The direct call to pydice with '%s' resulted in %s." % (dice, num))
                 elif dice == 'INFO':
                     print('roll(), release version ' + __release__ + ' for Python ' + __py_version__)
+                elif dice == 'HEX':
+                    print("Your HEX roll is %d." % (dice, num))
             else:
                 print('Typo of some sort --> ' + dice)
         else:
@@ -683,7 +685,7 @@ if __name__ == '__main__':
                 dice_log.debug('Default roll was made')
             num = roll(dice)
             if dice != 'TEST' and dice != 'INFO' and dice != 'MINMAXAVG':
-                print("Your '%s' roll is %d." % (dice, num))
-                dice_log.info("The direct call to pydice with '%s' resulted in %d." % (dice, num))
+                print("Your '%s' roll is %s." % (dice, num))
+                dice_log.info("The direct call to pydice with '%s' resulted in %s." % (dice, num))
             elif dice == 'INFO':
                 print('roll(), release version ' + __release__ + ' for Python ' + __py_version__)
