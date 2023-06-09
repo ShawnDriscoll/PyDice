@@ -21,4 +21,4 @@
 
 .. note::
 
-   **FLUX, GOODFLUX**, **BADFLUX**, **ADVANTAGE**, **DISADVANTAGE**, and **SICHERMAN** will ignore **dice roll modifiers**.
+   **FLUX, GOODFLUX, BADFLUX, SICHERMAN**, and **HEX** will ignore **dice roll modifiers**. **HEX** will return a string instead of an integer.

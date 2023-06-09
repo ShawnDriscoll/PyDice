@@ -77,13 +77,13 @@ into your ``game_utils`` folder and add this line near the top of your code: ::
 Some ways to see if the ``pydice`` module was installed correctly is by typing:
 
 >>> print(roll('info'))
-('3.12', 'roll(), release version 3.12.0 for Python 3.11.0')
+('3.12', 'roll(), release version 3.12.3 for Python 3.11.0')
 >>> print(roll.__doc__)
     The dice types to roll are:
         '4dF', 'D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10', 'D12', 'D20',
         'D30', 'D099', 'D100', 'D0999', 'D1000', 'D44', 'D66', 'D666', 'D88', 'DD',
         'FLUX', 'GOODFLUX', 'BADFLUX', 'BOON', 'BANE', 'ADVANTAGE',
-        'DISADVANTAGE', 'SICHERMAN', and also Traveller5's 1D thru 10D rolls
+        'DISADVANTAGE', 'SICHERMAN', 'HEX', and also Traveller5's 1D thru 10D rolls
     Some examples are:
     roll('D6') or roll('1D6') -- roll one 6-sided die
     roll('2D6') -- roll two 6-sided dice

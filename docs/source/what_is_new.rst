@@ -1,8 +1,13 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.12.2
+New in pydice 3.12.3
 --------------------
+
+**HEX** dice rolls have been added to generate values **0 - F**. These are strings rather than integers.
+
+
+New in pydice 3.12.2
 
 **D09**, **D100**, **D099**, **D1000**, and **D0999** rolls have better ``DEBUG`` logging now.
 
