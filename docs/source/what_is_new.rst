@@ -1,8 +1,15 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.12.3
+New in pydice 3.12.4
 --------------------
+
+The new **D01** roll generates values **0 - 1**.
+
+.. note::
+  The older **D1** roll has been deprecated. This will give a ``WARNING``.
+  
+New in pydice 3.12.3
 
 **HEX** dice rolls have been added to generate values **0 - F**. These are strings rather than integers.
 

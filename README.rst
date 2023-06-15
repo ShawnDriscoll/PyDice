@@ -43,6 +43,11 @@ Things To-Do
 
 **Known History**
 
+* v3.12.4
+
+  The new **D01** roll generates values **0 - 1**.
+  The older **D1** roll has been deprecated. This will give a ``WARNING``.
+
 * v3.12.3
 
   **HEX** dice rolls have been added to generate values **0 - F**. These are strings rather than integers.
