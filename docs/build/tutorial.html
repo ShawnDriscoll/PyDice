@@ -81,7 +81,7 @@ be used. But first, we must give this function a value to work from.</p>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>D01, FLUX, GOODFLUX, BADFLUX, SICHERMAN</strong>, and <strong>HEX</strong> will ignore <strong>dice roll modifiers</strong>. <strong>HEX</strong> will return a string instead of an integer.</p>
+<p><strong>D01, FLUX, GOODFLUX, BADFLUX, SICHERMAN</strong>, <strong>HEX</strong>, and <strong>EHEX</strong> will ignore <strong>dice roll modifiers</strong>. <strong>HEX</strong> and <strong>EHEX</strong> will return a string instead of an integer.</p>
 </div>
 <p>Those of you that have used dice rolling programs before will notice that something is different. And that is,
 <code class="docutils literal notranslate"><span class="pre">roll()</span></code> uses a string for its input:</p>
@@ -97,9 +97,10 @@ be used. But first, we must give this function a value to work from.</p>
 <p>The dice types to roll are:</p>
 <blockquote>
 <div><p><strong>D01, D2, D3, D4, D5, D6, D8, D09, D10, D12, D20, D30, D099, D100, D0999, D1000, D44, D66, D666, D88,
-DD, BOON, BANE, FLUX, GOODFLUX, BADFLUX, ADVANTAGE, DISADVANTAGE, SICHERMAN, HEX</strong>, and <strong>4dF</strong>.</p>
+DD, BOON, BANE, FLUX, GOODFLUX, BADFLUX, ADVANTAGE, DISADVANTAGE, SICHERMAN, HEX, EHEX</strong>, and <strong>4dF</strong>.</p>
 </div></blockquote>
 <p><strong>HEX</strong> rolls will generate the hexadecimal values of <strong>0 - F</strong>. These are strings rather than integers.</p>
+<p><strong>EHEX</strong> rolls will generate the extended hexadecimal values of <strong>0 - Z</strong> used in Traveller5. These are strings rather than integers.</p>
 <p><strong>D01</strong> rolls will generate a range of <strong>0 - 1</strong>.</p>
 <p><strong>D09</strong> rolls will generate a range of <strong>0 - 9</strong>.</p>
 <p><strong>D099</strong> rolls will generate a range of <strong>0 - 99</strong>.</p>
@@ -238,7 +239,7 @@ The comments will appear in the log. This is to help document what certain rolls
           
     <div class="footer" role="contentinfo">
         &#169; Copyright 2023, SHONNER CORP.
-      Last updated on Jun 15, 2023.
+      Last updated on Jun 16, 2023.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
         </div>

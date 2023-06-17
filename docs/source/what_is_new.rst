@@ -1,8 +1,13 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.12.4
+New in pydice 3.12.5
 --------------------
+
+**EHEX** rolls will generate the extended hexadecimal values of **0 - Z** used in Traveller5. These are strings rather than integers.
+
+
+New in pydice 3.12.4
 
 The new **D01** roll generates values **0 - 1**.
 

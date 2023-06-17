@@ -31,7 +31,7 @@ be used. But first, we must give this function a value to work from.
 
 .. note::
 
-   **D01, FLUX, GOODFLUX, BADFLUX, SICHERMAN**, and **HEX** will ignore **dice roll modifiers**. **HEX** will return a string instead of an integer.
+   **D01, FLUX, GOODFLUX, BADFLUX, SICHERMAN**, **HEX**, and **EHEX** will ignore **dice roll modifiers**. **HEX** and **EHEX** will return a string instead of an integer.
 
 Those of you that have used dice rolling programs before will notice that something is different. And that is,
 ``roll()`` uses a string for its input:
@@ -49,9 +49,11 @@ Notice that the inputted string values can be upper or lower case.
 The dice types to roll are:
 
    **D01, D2, D3, D4, D5, D6, D8, D09, D10, D12, D20, D30, D099, D100, D0999, D1000, D44, D66, D666, D88,
-   DD, BOON, BANE, FLUX, GOODFLUX, BADFLUX, ADVANTAGE, DISADVANTAGE, SICHERMAN, HEX**, and **4dF**.
+   DD, BOON, BANE, FLUX, GOODFLUX, BADFLUX, ADVANTAGE, DISADVANTAGE, SICHERMAN, HEX, EHEX**, and **4dF**.
 
 **HEX** rolls will generate the hexadecimal values of **0 - F**. These are strings rather than integers.
+
+**EHEX** rolls will generate the extended hexadecimal values of **0 - Z** used in Traveller5. These are strings rather than integers.
 
 **D01** rolls will generate a range of **0 - 1**.
 
