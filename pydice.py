@@ -1,7 +1,7 @@
 #
 #   pydice.py 3.12.5
 #
-#   Written for Python 3.11.0
+#   Written for Python 3.11.4
 #
 #   To use this module: from pydice import roll
 #
