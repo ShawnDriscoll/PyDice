@@ -12,17 +12,6 @@ the **pydice Operations Manual** at http://pydice.readthedocs.io
 Download the PDF from https://readthedocs.org/projects/pydice/downloads/pdf/latest
 
 
-Windows CMD or PS Installation
-------------------------------
-
-``pip install git+https://github.com/ShawnDriscoll/pydice``
-
-Then enter in your code: ::
-
-   from rpg_tools.pydice import roll
-   print(roll('2d6'))
-   
-
 .. |ss| raw:: html
 
     <strike>
