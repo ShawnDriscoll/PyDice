@@ -1,6 +1,6 @@
 # This is a dice test program for calling pydice
 
-from pydice import roll
+from rpg_tools.pydice import roll
 import os
 import logging
 
