@@ -20,7 +20,7 @@ Windows CMD or PS Installation
 Then enter in your code: ::
 
    from rpg_tools.pydice import roll
-   print(roll('2d6))
+   print(roll('2d6'))
    
 
 .. |ss| raw:: html
