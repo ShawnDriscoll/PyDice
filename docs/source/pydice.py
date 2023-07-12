@@ -31,9 +31,9 @@ __py_version_req__ = (3,11,4)
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
 dice_log = logging.getLogger('pydice')
-dice_log.setLevel(logging.INFO)
+#dice_log.setLevel(logging.INFO)
 #dice_log.setLevel(logging.DEBUG)
-#dice_log.setLevel(logging.WARNING)
+dice_log.setLevel(logging.WARNING)
 
 if not os.path.exists('Logs'):
     os.mkdir('Logs')
