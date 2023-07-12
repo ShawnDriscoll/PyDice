@@ -93,10 +93,10 @@ def _dierolls(dtype, dcount):
 def roll(dice='2d6'):
     '''
     The dice types to roll are:\n
-    '4dF', 'D01', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10', 'D12', 'D20',
-    'D30', 'D099', 'D100', 'D0999', 'D1000', 'D44', 'D66', 'D666', 'D88',
-    'DD', 'FLUX', 'GOODFLUX', 'BADFLUX', 'BOON', 'BANE', 'ADVANTAGE',
-    'DISADVANTAGE', 'SICHERMAN', 'HEX', 'EHEX', and also Traveller5's 1D thru 10D rolls
+    4dF, D01, D2, D3, D4, D5, D6, D8, D09, D10, D12, D20,
+    D30, D099, D100, D0999, D1000, D44, D66, D666, D88,
+    DD, FLUX, GOODFLUX, BADFLUX, BOON, BANE, ADVANTAGE,
+    DISADVANTAGE, SICHERMAN, HEX, EHEX, and also Traveller5's 1D thru 10D rolls
 
     Some examples are:\n
     roll('D6') or roll('1D6') -- roll one 6-sided die\n
