@@ -466,9 +466,9 @@ def roll(dice='2d6'):
                     dice_log.info("'%s' = %d%s+%d = %d %s" % (dice, num_dice, dice_type, dice_mod, rolled, dice_comment))
                     return rolled
             if dice_type == 'D1':
-                print("WARNING: The '1D1' roll has been deprecated in roll() v3.12.4.")
+                print("WARNING: The '1D1' roll has been deprecated since roll() v3.12.4.")
                 print("Using '1D01' for the roll instead.")
-                dice_log.warning("WARNING: The '1D1' roll has been deprecated in roll() v3.12.4.")
+                dice_log.warning("WARNING: The '1D1' roll has been deprecated since roll() v3.12.4.")
                 dice_log.warning("Using '1D01' for the roll instead.")
                 dice_type ='D01'
             if dice_type == 'D01' and num_dice == 1 and dice_mod == 0:

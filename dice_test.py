@@ -20,7 +20,7 @@ if __name__ == '__main__':
 #                         filemode = 'w')
 
     log = logging.getLogger('your_logger_function_here')
-    log.setLevel(logging.DEBUG)
+    log.setLevel(logging.INFO)
 
     if not os.path.exists('Logs'):
         os.mkdir('Logs')
