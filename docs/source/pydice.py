@@ -364,7 +364,7 @@ def roll(dice='2d6'):
             num_dice = int(dF_dice[0:len(dF_dice) - 2])
             rolled = 0
             for rolls in range(num_dice):
-                fate_die = int(random() * 4) - 2
+                fate_die = int(random() * 3) - 1
                 dice_log.debug('Rolled a %d' % fate_die)
                 rolled += fate_die
             rolled += dice_mod

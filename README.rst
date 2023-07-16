@@ -40,6 +40,10 @@ Things To-Do
 
 **Known History**
 
+* v3.12.6
+
+  FATE rolls were using the wrong random(). Fixed.
+
 * v3.12.5
 
   **EHEX** rolls will generate the extended hexadecimal values of **0 - Z** used in Traveller5. These are strings rather than integers.
