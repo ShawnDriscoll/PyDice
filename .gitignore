@@ -29,8 +29,11 @@ Desktop.ini
 ## Python
 ############
 __pycache__/
+*.pyc
 
+############
 # Packages
+############
 *.egg
 *.egg-info
 eggs/
