@@ -9,6 +9,8 @@ Here is a sample list of software titles, at the time of this writing, using **p
 
 **PyImperial CharGen**
 
+**PyQt5 Dice App**
+
 **pyqtgraph_PyTravCalc**
 
 **Python Feral Ghoul FSM**
@@ -21,6 +23,6 @@ Here is a sample list of software titles, at the time of this writing, using **p
 
 **TPS DieRoller**
 
-**TravEncounters**
-
 **Traveller5 Task Roller**
+
+**TravEncounters**
