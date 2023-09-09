@@ -63,6 +63,7 @@ develop-eggs/
 #build/
 *.bat
 *.spec
+*.ico
 
 
 #########
