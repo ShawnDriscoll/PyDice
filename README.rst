@@ -40,6 +40,10 @@ Things To-Do
 
 **Known History**
 
+* v3.12.7
+
+  Fixed crash caused when the amount of high or low number of dice to keep was missing.
+
 * v3.12.6
 
   FATE rolls were using the wrong random(). Fixed.

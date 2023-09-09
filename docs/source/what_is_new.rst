@@ -1,8 +1,13 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.12.6
+New in pydice 3.12.7
 --------------------
+
+Fixed crash caused when the amount of high or low number of dice to keep was missing.
+
+
+New in pydice 3.12.6
 
 FATE rolls were using the wrong random(). Fixed.
 
