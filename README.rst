@@ -40,6 +40,10 @@ Things To-Do
 
 **Known History**
 
+* v3.12.8
+
+  Is aware of Python 3.11.6.
+
 * v3.12.7
 
   Fixed crash caused when the amount of high or low number of dice to keep was missing.

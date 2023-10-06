@@ -47,7 +47,7 @@ author = 'Shawn Driscoll'
 version = '3.12'
 # The full version, including alpha/beta/rc tags.
 #release = '3.12.7'
-release = '3.12.7 (First Printing)'
+release = '3.12.8 (First Printing)'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -105,7 +105,7 @@ html_theme = 'agogo'
 html_title = 'pydice Operations Manual'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = 'pydice 3.12.7 Operations Manual'
+#html_short_title = 'pydice 3.12.8 Operations Manual'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.

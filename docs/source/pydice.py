@@ -1,7 +1,7 @@
 #
-#   pydice.py 3.12.7
+#   pydice.py 3.12.8
 #
-#   Written for Python 3.11.4
+#   Written for Python 3.11.6
 #
 #   To use this module: from pydice import roll
 #
@@ -26,8 +26,8 @@ import logging
 import sys
 
 __version__ = '3.12'
-__release__ = '3.12.7'
-__py_version_req__ = (3,11,4)
+__release__ = '3.12.8'
+__py_version_req__ = (3,11,6)
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
 dice_log = logging.getLogger('pydice')
@@ -480,7 +480,7 @@ def roll(dice='2d6'):
                 print("Using '1D01' for the roll instead.")
                 dice_log.warning("WARNING: The '1D1' roll has been deprecated in roll() v3.12.4.")
                 dice_log.warning("Using '1D01' for the roll instead.")
-                dice_type ='D01'
+                dice_type = 'D01'
             if dice_type == 'D01' and num_dice == 1 and dice_mod == 0:
                 rolled = int(random() + .5)
                 dice_log.info("'%s' = %d%s = %d %s" % (dice_type, num_dice, dice_type, rolled, dice_comment))

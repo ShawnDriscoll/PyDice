@@ -31,7 +31,7 @@ Requirements
 
 * **Microsoft Windows**
    
-   **pydice** has been tested on Windows 10.
+   **pydice** has been tested on Windows 10 and Windows 11.
    It has not been tested on MacOS or Linux.
    
 * **Python 3.11**
@@ -77,7 +77,7 @@ into your ``game_utils`` folder and add this line near the top of your code: ::
 Some ways to see if the ``pydice`` module was installed correctly is by typing:
 
 >>> print(roll('info'))
-('3.12', 'roll(), release version 3.12.7 for Python (3, 11, 4)')
+('3.12', 'roll(), release version 3.12.8 for Python (3, 11, 6)')
 >>> print(roll.__doc__)
     The dice types to roll are:
         4dF, D01, D2, D3, D4, D5, D6, D8, D09, D10, D12, D20,

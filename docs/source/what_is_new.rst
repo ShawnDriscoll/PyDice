@@ -1,8 +1,12 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.12.7
+New in pydice 3.12.8
 --------------------
+
+Just an incremental update to be made aware of Python 3.11.6.
+
+New in pydice 3.12.7
 
 Fixed crash caused when the amount of high or low number of dice to keep was missing.
 
