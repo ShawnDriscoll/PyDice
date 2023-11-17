@@ -609,35 +609,36 @@ def roll(dice='2d6'):
                 rolled = (_dierolls(6, num_dice) + dice_mod) * 10
                 dice_log.info("'%s' = (%d%s+%d) * 10 = %d %s" % (dice, num_dice, dice_type, dice_mod, rolled, dice_comment))
                 return rolled
+    
+    if dice[len(dice)-2:] == 'S6':
+        ichar1 = dice.find('S6')
+        if ichar1 == 0:
             
-    ichar1 = dice.find('S6')
-    if ichar1 == 0:
-        
-        # only one die is being rolled
-        num_dice = 1
+            # only one die is being rolled
+            num_dice = 1
 
-    if ichar1 != -1:
-        if ichar1 != 0:
-            
-            # is there a number found?
-            if dice[0:ichar1].isdigit():
-                # how many dice are being rolled?
-                num_dice = int(dice[0:ichar1])
-            else:
-                num_dice = 0
-        if num_dice >= 1:
+        if ichar1 != -1:
+            if ichar1 != 0:
+                
+                # is there a number found?
+                if dice[0:ichar1].isdigit():
+                    # how many dice are being rolled?
+                    num_dice = int(dice[0:ichar1])
+                else:
+                    num_dice = 0
+            if num_dice >= 1:
 
-            # roll the dice pool
-            success_rolls = 0
-            for i in range(num_dice):
-                rolled = _dierolls(6, 1)
-                if rolled == 6:
-                    success_rolls += 1
-            if success_rolls == 0:
-                dice_log.info("'%s' = No Successes %s" % (dice, dice_comment))
-            else:
-                dice_log.info("'%s' = %d Successes %s" % (dice, success_rolls, dice_comment))
-            return success_rolls
+                # roll the dice pool
+                success_rolls = 0
+                for i in range(num_dice):
+                    rolled = _dierolls(6, 1)
+                    if rolled == 6:
+                        success_rolls += 1
+                if success_rolls == 0:
+                    dice_log.info("'%s' = No Successes %s" % (dice, dice_comment))
+                else:
+                    dice_log.info("'%s' = %d Successes %s" % (dice, success_rolls, dice_comment))
+                return success_rolls
                 
                                                     
     log.error('[ERROR] Wrong dice type entered: %s' % org_dice)
