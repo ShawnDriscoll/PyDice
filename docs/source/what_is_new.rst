@@ -1,10 +1,16 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.12.8
+New in pydice 3.12.9
 --------------------
 
+**S6** rolls return the number of successes (a 6 was rolled on a die). More than one die can be rolled together as a dice pool, such as 7S6 (for rolling seven S6 dice).
+
+
+New in pydice 3.12.8
+
 Just an incremental update to be made aware of Python 3.11.6.
+
 
 New in pydice 3.12.7
 
@@ -27,7 +33,8 @@ The new **D01** roll generates values **0 - 1**.
 
 .. note::
   The older **D1** roll has been deprecated. This will give a ``WARNING``.
-  
+
+
 New in pydice 3.12.3
 
 **HEX** dice rolls have been added to generate values **0 - F**. These are strings rather than integers.
