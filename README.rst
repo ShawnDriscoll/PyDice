@@ -28,7 +28,7 @@ Things To-Do
 | Cheat codes.
 |ss|
 
-| Added success dice (S6).
+| Add success dice (dice pool rolls).
 | Update to Python 3.11.0.
 | Think about adding a D666 roll.
 | Discontinue PyDiceroll. Rename project to pydice, staring at v3.8.
@@ -43,7 +43,7 @@ Things To-Do
 
 * v3.12.9
 
-  Added success dice (S6).
+  Added success dice (S6) for dice pool rolls.
 
 * v3.12.8
 
