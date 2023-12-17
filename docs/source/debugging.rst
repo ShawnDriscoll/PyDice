@@ -16,7 +16,7 @@ Setting the logging mode to ``INFO`` will record more info in the log. ::
 Your **INFO** logging will output as:
 
    | ...INFO pydice - Logging started.
-   | ...INFO pydice - roll() v3.12 started, and running...
+   | ...INFO pydice - roll() v3.13 started, and running...
    | ...INFO pydice - '3D4' = 3D4+0 = 10
 
 Changing **pydice's** logging mode to ``DEBUG`` will record debugging messages in the ``Logs\pydice.log`` file. ::
@@ -26,7 +26,7 @@ Changing **pydice's** logging mode to ``DEBUG`` will record debugging messages i
 Your **DEBUG** logging will output as:
 
    | ...INFO pydice - Logging started.
-   | ...INFO pydice - roll() v3.12 started, and running...
+   | ...INFO pydice - roll() v3.13 started, and running...
    | ...DEBUG pydice - Asked to roll '3D4':
    | ...DEBUG pydice - Using three 4-sided dice...
    | ...DEBUG pydice - Rolled a 4

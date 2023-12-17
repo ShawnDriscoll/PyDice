@@ -37,17 +37,17 @@ master_doc = 'index'
 
 # General substitutions.
 project = 'pydice'
-copyright = '2023, SHONNER CORP'
+copyright = '2024, SHONNER CORP'
 author = 'Shawn Driscoll'
 
 # The default replacements for |version| and |release|, also used in various
 # other places throughout the built documents.
 #
 # The short X.Y version.
-version = '3.12'
+version = '3.13'
 # The full version, including alpha/beta/rc tags.
-#release = '3.12.9'
-release = '3.12.9 (First Printing)'
+#release = '3.13.0'
+release = '3.13.0 (First Printing)'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:

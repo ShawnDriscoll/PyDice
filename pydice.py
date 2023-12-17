@@ -1,11 +1,9 @@
 #
-#   pydice.py 3.12.9
+#   pydice.py 3.13.0
 #
 #   Written for Python 3.11.6
 #
 #   To use this module: from pydice import roll
-#
-#   Make a dice roll
 #
 ##########################################################
 
@@ -25,8 +23,8 @@ import os
 import logging
 import sys
 
-__version__ = '3.12'
-__release__ = '3.12.9'
+__version__ = '3.13'
+__release__ = '3.13.0'
 __py_version_req__ = (3,11,6)
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
@@ -96,7 +94,7 @@ def roll(dice='2d6'):
     '4dF', 'D01', 'D2', 'D3', 'D4', 'D5', 'D6', 'D8', 'D09', 'D10', 'D12', 'D20',
     'D30', 'D099', 'D100', 'D0999', 'D1000', 'D44', 'D66', 'D666', 'D88',
     'DD', 'FLUX', 'GOODFLUX', 'BADFLUX', 'BOON', 'BANE', 'ADVANTAGE',
-    'DISADVANTAGE', 'SICHERMAN', 'S6', 'HEX', 'EHEX', and also Traveller5's 1D thru 10D rolls
+    'DISADVANTAGE', 'SICHERMAN', 'S6', 'S10', 'HEX', 'EHEX', and also Traveller5's 1D thru 10D rolls
 
     Some examples are:\n
     roll('D6') or roll('1D6') -- roll one 6-sided die\n
@@ -610,6 +608,7 @@ def roll(dice='2d6'):
                 dice_log.info("'%s' = (%d%s+%d) * 10 = %d %s" % (dice, num_dice, dice_type, dice_mod, rolled, dice_comment))
                 return rolled
     
+    # 6-sided success dice?
     if dice[len(dice)-2:] == 'S6':
         ichar1 = dice.find('S6')
         if ichar1 == 0:
@@ -636,6 +635,41 @@ def roll(dice='2d6'):
                         success_rolls += 1
                 if success_rolls == 0:
                     dice_log.info("'%s' = No Successes %s" % (dice, dice_comment))
+                elif success_rolls == 1:
+                    dice_log.info("'%s' = %d Success %s" % (dice, success_rolls, dice_comment))
+                else:
+                    dice_log.info("'%s' = %d Successes %s" % (dice, success_rolls, dice_comment))
+                return success_rolls
+
+    # 10-sided success dice?
+    if dice[len(dice)-3:] == 'S10':
+        ichar1 = dice.find('S10')
+        if ichar1 == 0:
+            
+            # only one die is being rolled
+            num_dice = 1
+
+        if ichar1 != -1:
+            if ichar1 != 0:
+                
+                # is there a number found?
+                if dice[0:ichar1].isdigit():
+                    # how many dice are being rolled?
+                    num_dice = int(dice[0:ichar1])
+                else:
+                    num_dice = 0
+            if num_dice >= 1:
+
+                # roll the dice pool
+                success_rolls = 0
+                for i in range(num_dice):
+                    rolled = _dierolls(10, 1)
+                    if rolled >= 6:
+                        success_rolls += 1
+                if success_rolls == 0:
+                    dice_log.info("'%s' = No Successes %s" % (dice, dice_comment))
+                elif success_rolls == 1:
+                    dice_log.info("'%s' = %d Success %s" % (dice, success_rolls, dice_comment))
                 else:
                     dice_log.info("'%s' = %d Successes %s" % (dice, success_rolls, dice_comment))
                 return success_rolls

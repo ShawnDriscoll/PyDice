@@ -21,4 +21,4 @@
 
 .. note::
 
-   **D01, FLUX, GOODFLUX, BADFLUX, SICHERMAN**, **S6**, **HEX**, and **EHEX** will ignore **dice roll modifiers**. **HEX** and **EHEX** will return a string instead of an integer.
+   **D01, FLUX, GOODFLUX, BADFLUX, SICHERMAN**, **S6**, **S10**, **HEX**, and **EHEX** will ignore **dice roll modifiers**. **HEX** and **EHEX** will return a string instead of an integer.

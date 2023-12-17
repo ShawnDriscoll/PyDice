@@ -1,10 +1,14 @@
 **What's New with pydice?**
 ===========================
 
-New in pydice 3.12.9
+New in pydice 3.13.0
 --------------------
+**S10** rolls return the number of successes (a 6 or higher was rolled on a die). More than one die can be rolled together as a dice pool, such as 7S10 (for rolling seven S10 dice).
 
-**S6** rolls return the number of successes (a 6 was rolled on a die). More than one die can be rolled together as a dice pool, such as 7S6 (for rolling seven S6 dice).
+
+New in pydice 3.12.9
+
+**S6** rolls return the number of successes (a 6 was rolled on a die). More than one die can be rolled together as a dice pool, such as 5S6 (for rolling five S6 dice).
 
 
 New in pydice 3.12.8

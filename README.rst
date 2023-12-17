@@ -41,6 +41,10 @@ Things To-Do
 
 **Known History**
 
+* v3.13.0
+
+  Added success dice (S10) for dice pool rolls.
+
 * v3.12.9
 
   Added success dice (S6) for dice pool rolls.
@@ -158,6 +162,6 @@ Contact
 Questions? Please contact shawndriscoll@hotmail.com
 
 The Traveller game in all forms is owned by Far
-Future Enterprises. Copyright 1977 - 2023 Far Future
+Future Enterprises. Copyright 1977 - 2024 Far Future
 Enterprises. Traveller is a registered trademark of Far
 Future Enterprises.
