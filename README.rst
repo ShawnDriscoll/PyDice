@@ -24,7 +24,6 @@ Things To-Do
 ------------
 
 | Add more dice roll types.
-| Make it talk?
 | Cheat codes.
 |ss|
 
