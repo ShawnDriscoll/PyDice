@@ -12,33 +12,15 @@ the **pydice Operations Manual** at http://pydice.readthedocs.io
 Download the PDF from https://readthedocs.org/projects/pydice/downloads/pdf/latest
 
 
-.. |ss| raw:: html
-
-    <strike>
-
-.. |se| raw:: html
-
-    </strike>
-
 Things To-Do
 ------------
 
 | Add more dice roll types.
 | Cheat codes.
-|ss|
 
-| Add success dice (dice pool rolls).
-| Update to Python 3.11.0.
-| Think about adding a D666 roll.
-| Discontinue PyDiceroll. Rename project to pydice, staring at v3.8.
-| Fudge the Fate dice roll a bit.
-| Add Advantage and Disadvantage roll types.
-| Instruction manual.
-| Start on a To-Do.
 
-|se|
-
-**Known History**
+Known History
+-------------
 
 * v3.13.0
 
